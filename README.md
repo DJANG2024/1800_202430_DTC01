@@ -6,10 +6,13 @@ State your app in a nutshell, or one-sentence pitch. Give some elaboration on wh
 This browser based web application to ...
 
 ## 2. Names of Contributors
-List team members and/or short bio's here... 
-* HELLO MY NAMES ETHAN TEEHEE, THIS WILL DEFINITLEY CAUSE NO CONFLICTS
-* Hi my name is Derek: I Loves poutine
-* ...
+
+List team members and/or short bio's here...
+
+- HELLO MY NAMES ETHAN TEEHEE, THIS WILL DEFINITLEY CAUSE NO CONFLICTS
+- Hi my name is Derek: I Loves poutine
+- Hello, my name is Titus whats going on?
+
 ## 3. Technologies and Resources Used
 
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
