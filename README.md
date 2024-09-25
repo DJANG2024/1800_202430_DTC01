@@ -11,7 +11,7 @@ List team members and/or short bio's here...
 
 - HELLO MY NAMES ETHAN TEEHEE, THIS WILL DEFINITLEY CAUSE NO CONFLICTS
 - Hi my name is Derek: I Loves poutine
-- Hello, my name is Titus whats going on?
+- Hello, my name is Titus whats going on? again
 
 ## 3. Technologies and Resources Used
 
