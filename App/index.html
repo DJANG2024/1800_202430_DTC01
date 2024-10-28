@@ -13,25 +13,32 @@
     />
   </head>
 
-  <body>
+  <body class="bg-yellow-100">
     <header class="flex flex-col align-middle justify-center text-center">
       <div class="text-center py-2">FacePalm</div>
       <div class="flex align-middle justify-center">
+        <img src="images/search.svg" alt="" class="relative left-8" />
         <input
-          class="rounded-full border-black border-2 px-2"
+          class="rounded-full border-black border-2 px-5 pl-8 bg-yellow-200"
           type="text"
           placeholder="Find"
-          style="background-image: url('images/search.svg')"
         />
-        <a href="" class="px-1"
-          ><i class="material-icons text-4xl">account_circle</i></a
+        <i class="material-icons text-2xl relative -left-9 -bottom-1"
+          >filter_alt</i
+        >
+        <a href="profile.html" class="px-1"
+          ><i class="material-icons text-4xl -ml-6">account_circle</i></a
         >
       </div>
       <div class="py-2">
-        <button class="rounded-s-lg border-black border-2 px-9 mr-[-3px]">
+        <button
+          class="rounded-s-lg border-black border-2 px-9 mr-[-3px] hover:bg-gray-500"
+        >
           <a href="posting.html">Posting</a>
         </button>
-        <button class="rounded-r-lg border-black border-2 px-9 ml-[-3px]">
+        <button
+          class="rounded-r-lg border-black border-2 px-9 ml-[-3px] hover:bg-gray-500"
+        >
           <a href="profile.html">Profile</a>
         </button>
       </div>
