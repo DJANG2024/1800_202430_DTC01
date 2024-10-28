@@ -1,92 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
 
-  <body class="bg-yellow-100">
+<body class="bg-yellow-100 max-w-lg">
     <header class="flex flex-col align-middle justify-center text-center">
-      <div class="text-center py-2">FacePalm</div>
-      <div class="flex align-middle justify-center">
-        <img src="images/search.svg" alt="" class="relative left-8" />
-        <input
-          class="rounded-full border-black border-2 px-5 pl-8 bg-yellow-200"
-          type="text"
-          placeholder="Find"
-        />
-        <i class="material-icons text-2xl relative -left-9 -bottom-1"
-          >filter_alt</i
-        >
-        <a href="profile.html" class="px-1"
-          ><i class="material-icons text-4xl -ml-6">account_circle</i></a
-        >
-      </div>
-      <div class="py-2">
-        <button
-          class="rounded-s-lg border-black border-2 px-9 mr-[-3px] hover:bg-gray-500"
-        >
-          <a href="posting.html">Posting</a>
-        </button>
-        <button
-          class="rounded-r-lg border-black border-2 px-9 ml-[-3px] hover:bg-gray-500"
-        >
-          <a href="profile.html">Profile</a>
-        </button>
-      </div>
-    </header>
-  </body>
-  <body class="max-w-lg">
-    <navbar class="">
-      <div class="border border-solid bg-[#b9e4e7]">
-        <div class="flex flex-row justify-between p-2">
-          <button class="px-6">
-            <a href="home.html">
-              <i class="material-icons text-gray-600 text-4xl">home</i>
-
-              <h1 class="text-gray-600 font-semibold">Home</h1>
-            </a>
-          </button>
-          <button class="px-6">
-            <a href="map.html">
-              <i class="material-icons text-gray-600 text-4xl">map</i>
-
-              <h1 class="text-gray-600 font-semibold">Map</h1>
-            </a>
-          </button>
-          <button class="px-2">
-            <a href="postings.html">
-              <i class="material-icons text-gray-600 text-5xl">add_circle</i>
-
-              <h1 class="text-gray-600 font-semibold text-nowrap text-sm">
-                Create Posting
-              </h1>
-            </a>
-          </button>
-          <button class="px-6">
-            <a href="switch.html">
-              <i class="material-icons text-gray-600 text-4xl">sync</i>
-
-              <h1 class="text-gray-600 font-semibold">Switch</h1>
-            </a>
-          </button>
-          <button class="px-6">
-            <a href="postings.html">
-              <i class="material-icons text-gray-600 text-4xl">bookmarks</i>
-
-              <h1 class="text-gray-600 font-semibold">Saved</h1>
-            </a>
-          </button>
+        <div class="text-center py-2">FacePalm</div>
+        <div class="flex align-middle justify-center">
+            <img src="images/search.svg" alt="" class="relative left-8" />
+            <input class="rounded-full border-black border-2 px-5 pl-8 bg-yellow-200" type="text" placeholder="Find" />
+            <i class="material-icons text-2xl relative -left-9 -bottom-1">filter_alt</i>
+            <a href="profile.html" class="px-1"><i class="material-icons text-4xl -ml-6">account_circle</i></a>
         </div>
-      </div>
+        <div class="py-2">
+            <button class="rounded-s-lg border-black border-2 px-9 mr-[-3px] hover:bg-gray-500">
+                <a href="posting.html">Posting</a>
+            </button>
+            <button class="rounded-r-lg border-black border-2 px-9 ml-[-3px] hover:bg-gray-500">
+                <a href="profile.html">Profile</a>
+            </button>
+        </div>
+    </header>
+
+
+    <navbar class="">
+        <div class="border border-solid bg-[#b9e4e7]">
+            <div class="flex flex-row justify-between p-2">
+                <button class="px-6">
+                    <a href="home.html">
+                        <i class="material-icons text-gray-600 text-4xl">home</i>
+
+                        <h1 class="text-gray-600 font-semibold">Home</h1>
+                    </a>
+                </button>
+                <button class="px-6">
+                    <a href="map.html">
+                        <i class="material-icons text-gray-600 text-4xl">map</i>
+
+                        <h1 class="text-gray-600 font-semibold">Map</h1>
+                    </a>
+                </button>
+                <button class="px-2">
+                    <a href="postings.html">
+                        <i class="material-icons text-gray-600 text-5xl">add_circle</i>
+
+                        <h1 class="text-gray-600 font-semibold text-nowrap text-sm">
+                            Create Posting
+                        </h1>
+                    </a>
+                </button>
+                <button class="px-6">
+                    <a href="switch.html">
+                        <i class="material-icons text-gray-600 text-4xl">sync</i>
+
+                        <h1 class="text-gray-600 font-semibold">Switch</h1>
+                    </a>
+                </button>
+                <button class="px-6">
+                    <a href="postings.html">
+                        <i class="material-icons text-gray-600 text-4xl">bookmarks</i>
+
+                        <h1 class="text-gray-600 font-semibold">Saved</h1>
+                    </a>
+                </button>
+            </div>
+        </div>
     </navbar>
-  </body>
+</body>
+
 </html>
