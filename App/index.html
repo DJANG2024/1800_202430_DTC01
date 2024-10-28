@@ -5,23 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <!-- Google icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
   </head>
 
-  <body class="max-w-lg">
-    <navbar id="nav">
-      <div class="border border-solid bg-[#b9e4e7]">
-        <div class="flex flex-row justify-between p-2">
-          <button class="px-6">
-            <a href="home.html">
-              <i class="material-icons text-gray-600 text-4xl">home</i>
+<body class="bg-yellow-100 max-w-lg">
+    <header class="flex flex-col align-middle justify-center text-center">
+        <div class="text-center py-2">FacePalm</div>
+        <div class="flex align-middle justify-center">
+            <img src="images/search.svg" alt="" class="relative left-8" />
+            <input class="rounded-full border-black border-2 px-5 pl-8 bg-yellow-200" type="text" placeholder="Find" />
+            <i class="material-icons text-2xl relative -left-9 -bottom-1">filter_alt</i>
+            <a href="profile.html" class="px-1"><i class="material-icons text-4xl -ml-6">account_circle</i></a>
+        </div>
+        <div class="py-2">
+            <button class="rounded-s-lg border-black border-2 px-9 mr-[-3px] hover:bg-gray-500">
+                <a href="posting.html">Posting</a>
+            </button>
+            <button class="rounded-r-lg border-black border-2 px-9 ml-[-3px] hover:bg-gray-500">
+                <a href="profile.html">Profile</a>
+            </button>
+        </div>
+    </header>
+
+
+    <navbar class="">
+        <div class="border border-solid bg-[#b9e4e7]">
+            <div class="flex flex-row justify-between p-2">
+                <button class="px-6">
+                    <a href="home.html">
+                        <i class="material-icons text-gray-600 text-4xl">home</i>
 
               <h1 class="text-gray-600 font-semibold">Home</h1>
             </a>
