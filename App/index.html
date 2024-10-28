@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <!-- Google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
 
-<body>
-
-</body>
-
+  <body>
+    <header class="flex flex-col align-middle justify-center text-center">
+      <div class="text-center py-2">FacePalm</div>
+      <div class="flex align-middle justify-center">
+        <input
+          class="rounded-full border-black border-2 px-2"
+          type="text"
+          placeholder="Find"
+          style="background-image: url('images/search.svg')"
+        />
+        <a href="" class="px-1"
+          ><i class="material-icons text-4xl">account_circle</i></a
+        >
+      </div>
+      <div class="py-2">
+        <button class="rounded-s-lg border-black border-2 px-9 mr-[-3px]">
+          <a href="posting.html">Posting</a>
+        </button>
+        <button class="rounded-r-lg border-black border-2 px-9 ml-[-3px]">
+          <a href="profile.html">Profile</a>
+        </button>
+      </div>
+    </header>
+  </body>
 </html>
