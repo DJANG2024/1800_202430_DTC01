@@ -1,11 +1,7 @@
  @media screen{
     body{
         width: 720px;
-        height: 1280px;
+        max-height: 1280px;
     }
     
- }
- .body{
-    width: 720px;
-    height: 1280px;
  }
