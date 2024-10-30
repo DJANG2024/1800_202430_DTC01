@@ -42,11 +42,12 @@ function loadPosts() {
   // ============
   //   METHOD 2
   // ============
-  let number_of_post = 3;
+  let number_of_post = 10;
   for (let i = 0; i < number_of_post; i++) {
     $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
     $(`#post${i}`).load('../Assets/feed_posting.html');
   }
+    //$('#feedPostingPlaceholder')
 }
 
 function loadSkeleton() {
