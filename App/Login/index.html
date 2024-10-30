@@ -39,12 +39,13 @@
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./Styles/style.css" />
   </head>
 
   <body>
@@ -56,24 +57,26 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div class="container text-center py-4">
-      <div class="rounded-circle overflow-hidden">
-        <img class="responsive" src="./images/elmo.jpg" alt="" />
+    <div class="box-border max-w-[720px] max-h-[1280px]">
+      <div class="container text-center py-[50%]">
+        <div class="rounded-circle overflow-hidden">
+          <img class="responsive" src="../images/search.svg" alt="" />
+        </div>
+        <h1>Welcome to FacePalm</h1>
+        <a href="login.html" class="btn btn-warning" role="button">Log in</a>
       </div>
-      <h1>Welcome to HoCa's Hiking App</h1>
-      <a href="login.html" class="btn btn-warning" role="button">Log in</a>
+      <!-- the body of your page goes here -->
+      <!-- stuff -->
+
+      <!-- our own footer goes here-->
+      <nav id="footerPlaceholder"></nav>
+
+      <!---------------------------------------------->
+      <!-- Your own JavaScript functions go here    -->
+      <!---------------------------------------------->
+      <script src="./Scripts/firebaseAPI_DTC01.js"></script>
+      <script src="./Scripts/skeleton.js"></script>
+      <!-- <script src="./scripts/script.js"></script> -->
     </div>
-    <!-- the body of your page goes here -->
-    <!-- stuff -->
-
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="firebaseAPI_DTC01.js"></script>
-    <script src="skeleton.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
   </body>
 </html>
