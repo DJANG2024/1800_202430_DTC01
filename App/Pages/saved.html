@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
 </head>
 
-<body>
-    <div id="head"></div>
-    <p>This is Saved!</p>
-    <div id="nav"></div>
-    <script>
-        document.getElementById("nav").innerHTML =
-            '<object type="text/html" data="../Assets/navbar.html" style="width: 720px"></object>';
-    </script>
-    <script>
-        document.getElementById("head").innerHTML =
-            '<object type="text/html" data="../Assets/header.html" style="width: 720px; height: 700px"></object>';
-    </script>
+<body class="space-y-4">
+    <header id="headerPlaceholder"></header>
+
+    <section id="feedPostingPlaceholder" class="pt-[300px]  w-full "></section>
+
+
+
+    <nav id="navbarPlaceholder"></nav>
+
+
+    <script src="../Scripts/skeleton.js"></script>
+
 </body>
 
 </html>

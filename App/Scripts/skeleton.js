@@ -52,6 +52,7 @@ function loadPosts() {
 
 function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
+  console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
   loadPosts();
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
 }
