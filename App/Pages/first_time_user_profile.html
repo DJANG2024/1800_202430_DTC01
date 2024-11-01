@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-400 max-w-[720px]">
+    <header>
+        <h1 class="text-6xl text-center">
+            Lets finish your profile!
+        </h1>
+    </header>
+    <main class="p-4 space-y-6">
+        <div class="flex flex-row text-4xl justify-center space-x-6 bg-slate-500 rounded-xl p-3">
+            <h1 class="basis-1/3">Username</h1>
+            <input class="rounded-xl border-gray-200 border-2  bg-gray-200 text-3xl basis-2/3 px-2" type="text"
+                placeholder="" />
+        </div>
+        <div class="space-y-4 bg-slate-500 p-4 rounded-2xl">
+            <h1 class="text-4xl text-center">How will you be primarily using our app?</h1>
+
+            <div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+                <input id="bordered-radio-1" type="radio" value="" name="bordered-radio"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="bordered-radio-1"
+                    class="w-full py-4 ms-2 text-xl font-medium text-gray-900 dark:text-gray-300">I am looking for
+                    services</label>
+            </div>
+            <div class="flex items-center ps-4 border rounded dark:border-slate-600 peer ">
+                <input checked id="bordered-radio-2" type="radio" value="" name="bordered-radio"
+                    class="peer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2  peer-checked:border-white">
+                <label for="bordered-radio-2"
+                    class="w-full py-4 ms-2 text-xl font-medium peer-checked:text-red-600 ">I want to offer my
+                    services</label>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
