@@ -26,7 +26,7 @@
     <main class="p-4 space-y-6">
         <div class="flex flex-row text-4xl justify-center space-x-6 bg-slate-500 rounded-xl p-3">
             <h1 class="basis-1/3">Username</h1>
-            <input class="rounded-xl border-gray-200 border-2  bg-gray-200 text-3xl basis-2/3 px-2" type="text"
+            <input id="profile_username" class="rounded-xl border-gray-200 border-2  bg-gray-200 text-3xl basis-2/3 px-2" type="text"
                 placeholder="" />
         </div>
 
@@ -55,9 +55,9 @@
                     <input class="rounded-xl border-gray-200 border-2  bg-gray-200 text-xl w-full h-60 p-4 text-wrap"
                         type="text" placeholder="" />
                 </div>
-                <div class="p-3 space-y-4 py-9">
+                <div  class="p-3 space-y-4 py-9">
                     <h1 class="text-4xl">Choose the category that best fits you</h1>
-                    <select
+                    <select id="category"
                         class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded-xl shadow leading-tight focus:outline-none focus:shadow-outline">
                         <option>Option 1</option>
                         <option>Option 2</option>
@@ -78,17 +78,17 @@
             <h1 class="text-4xl pl-3">Add your location</h1>
             <div class="flex flex-row text-2xl justify-left space-x-6 bg-slate-500 rounded-xl p-3 ">
                 <h1 class="">Latitude:</h1>
-                <input class="rounded-xl border-gray-200 border-2  bg-gray-200 text-xl px-3 basis-2/3" type="text"
+                <input id="latitude" class="rounded-xl border-gray-200 border-2  bg-gray-200 text-xl px-3 basis-2/3" type="text"
                     placeholder="" />
             </div>
             <div class="flex flex-row text-2xl justify-left space-x-6 bg-slate-500 rounded-xl p-3 ">
                 <h1 class="">Longitude:</h1>
-                <input class="rounded-xl border-gray-200 border-2  bg-gray-200 text-xl px-3 basis-2/3" type="text"
+                <input id="longitude"class="rounded-xl border-gray-200 border-2  bg-gray-200 text-xl px-3 basis-2/3" type="text"
                     placeholder="" />
             </div>
         </div>
-        <button class="text-6xl text-white space-y-4 py-6 bg-slate-700 rounded-xl p-8 border-4 border-white w-full">
-            <a href="home.html">Submit!</a>
+        <button id="submit_form" class="text-6xl text-white space-y-4 py-6 bg-slate-700 rounded-xl p-8 border-4 border-white w-full">
+            <a href="">Submit!</a>
         </button>
 
     </main>
