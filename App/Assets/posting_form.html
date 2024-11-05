@@ -13,24 +13,36 @@
     />
   </head>
   <body class="bg-slate-400 max-w-[720px]">
-    <div>
-      <h1 class="text-xl text-center">Create Posting</h1>
-    </div>
+    <div class="space-y-4 bg-slate-500 p-4 rounded-2xl">
+      <h1 class="text-6xl text-center">Create Posting</h1>
 
-    <main class="p-4 space-y-6">
-      <div>
-        <h2 class="text-4xl text-center">Title</h2>
-        <form action="">
-          <input type="text" />
-          <h2 class="text-4xl text-center">Image</h2>
-          <input type="image" />
-          <h2 class="text-4xl text-center">Header:</h2>
-          <input type="text" />
-          <h2 class="text-4xl text-center">Details:</h2>
-          <input type="text" />
-        </form>
-        <button>Submit</button>
-      </div>
-    </main>
+      <main class="p-4 space-y-6">
+        <div>
+          <h2 class="text-4xl">Title</h2>
+          <form action="">
+            <input
+              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2 placeholder:text-base placeholder:"
+              type="text"
+              placeholder="Enter title"
+            />
+            <h2 class="text-4xl mt-8">Image</h2>
+            <input type="image" />
+            <h2 class="text-4xl mt-8">Header:</h2>
+            <input
+              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2"
+              type="text"
+              placeholder="Enter Header"
+            />
+            <h2 class="text-4xl mt-8">Details:</h2>
+            <input
+              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl w-full h-60 p-4 text-wrap"
+              type="text"
+              placeholder=""
+            />
+          </form>
+          <button class="border mt-5">Submit</button>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
