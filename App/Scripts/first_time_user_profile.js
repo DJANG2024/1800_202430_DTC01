@@ -93,6 +93,6 @@ function getInfoNewProfile() {
             console.log("No user is logged in");
         }
     });
-
+    
 }
 //getInfoNewProfile()
