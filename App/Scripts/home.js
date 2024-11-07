@@ -5,7 +5,7 @@ function populateUserInfo() {
     // Check if user is signed in:
     if (profiles) {
       //go to the correct user document by referencing to the user uid
-      currentUser = db.collection("profiles").doc(profiles.uid);
+      currentUser = db.collection('profiles').doc(profiles.uid);
       //get the document for current user.
       console.log(currentUser);
       currentUser.get().then((profileDoc) => {
@@ -17,7 +17,7 @@ function populateUserInfo() {
 
         //if the data fields are not empty, then write them in to the form.
         if (profileName != null) {
-          document.getElementById("nameInput").value = profileName;
+          document.getElementById('nameInput').value = profileName;
         }
         // if (userSchool != null) {
         //   document.getElementById("schoolInput").value = userSchool;
@@ -28,7 +28,7 @@ function populateUserInfo() {
       });
     } else {
       // No user is signed in.
-      console.log("No user is signed in");
+      console.log('No user is signed in');
     }
     
   }

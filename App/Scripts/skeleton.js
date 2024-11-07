@@ -44,18 +44,18 @@ function loadPosts() {
   // ============
   let number_of_post = 10;
   for (let i = 0; i < number_of_post; i++) {
-    $("#feedPostingPlaceholder").append(`<div id="post${i}"></div>`);
-    $(`#post${i}`).load("../Assets/feed_posting.html");
+    $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
+    $(`#post${i}`).load('../Assets/feed_posting.html');
   }
   //$('#feedPostingPlaceholder')
 }
 
 function loadSkeleton() {
-  console.log($("#headerPlaceholder").load("../Assets/header.html"));
+  console.log($(`#headerPlaceholder`).load('../Assets/header.html'));
   console.log(
-    $("#header_smallerPlaceholder").load("../Assets/header_smaller.html")
+    $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
   );
   loadPosts();
-  console.log($("#navbarPlaceholder").load("../Assets/navbar.html"));
+  console.log($(`#navbarPlaceholder`).load('../Assets/navbar.html'));
 }
 loadSkeleton(); //invoke the function
