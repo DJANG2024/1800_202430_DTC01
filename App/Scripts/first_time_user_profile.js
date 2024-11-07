@@ -37,19 +37,20 @@ function saveUserInfo() {
     var user = firebase.auth().currentUser;
     if (user) {
         var currentUser = db.collection("users").doc(user.uid);
-        var userID = user.uid;
-        var userFullName = user.displayName;
 
+        // var currentUser = db.collection("users").doc(user.uid).collection("profile");
+        
         // Get the document for the current user.
-        db.collection("profiles").add({
-            userID: userID,
-            name: userFullName,
+        // db.collection("profile")
+        // .doc(user.uid)
+        db.collection("profile").doc(user.uid)
+        .set({
             latitude: lat,
             longitude: long,
             username: profile_username,
-            name: userFullName,  
 
         }).then(() => {
+            console.log("SUccessfully added");
             window.location.href = "../Pages/home.html"; // Redirect to the thanks page
         });
     } else {
