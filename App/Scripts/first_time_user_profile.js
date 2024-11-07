@@ -1,64 +1,58 @@
-
 function process_response() {
+  var checked = document.getElementById("bordered-radio-1").checked;
+  const x = document.getElementById("description");
 
-    var checked = document.getElementById('bordered-radio-1').checked;
-    const x = document.getElementById("description");
+  z = document.getElementById("bordered-radio-1");
+  z.addEventListener("click", () => {
+    x.classList.add("hidden");
+    console.log("hidden");
+  });
 
-    z = document.getElementById('bordered-radio-1')
-    z.addEventListener("click", () => {
-        x.classList.add("hidden")
-        console.log("hidden");
-    });
-
-    y = document.getElementById('bordered-radio-2')
-    y.addEventListener("click", () => {
-        x.classList.remove("hidden")
-        console.log("visible");
-    });
-
+  y = document.getElementById("bordered-radio-2");
+  y.addEventListener("click", () => {
+    x.classList.remove("hidden");
+    console.log("visible");
+  });
 }
-process_response()
-
+process_response();
 
 var currentUser;
 
 function saveUserInfo() {
-    //enter code here
+  //enter code here
 
-    //a) get user entered values
-    
+  //a) get user entered values
 
-    const lat = document.getElementById("latitude").value;
-    const long = document.getElementById("longitude").value;
-    const profile_username = document.getElementById("profile_username").value;
+  const lat = document.getElementById("latitude").value;
+  const long = document.getElementById("longitude").value;
+  const profile_username = document.getElementById("profile_username").value;
 
+  //b) update user's document in Firestore
+  var user = firebase.auth().currentUser;
+  if (user) {
+    var currentUser = db.collection("users").doc(user.uid);
+    var userID = user.uid;
+    var userFullName = user.displayName;
 
-    //b) update user's document in Firestore
-    var user = firebase.auth().currentUser;
-    if (user) {
-        var currentUser = db.collection("users").doc(user.uid);
-        var userID = user.uid;
-        var userFullName = user.displayName;
+    // Get the document for the current user.
+    db.collection("profiles")
+      .add({
+        userID: userID,
+        name: userFullName,
+        latitude: lat,
+        longitude: long,
+        username: profile_username,
+        name: userFullName,
+      })
+      .then(() => {
+        window.location.href = "../Pages/home.html"; // Redirect to the thanks page
+      });
+  } else {
+    console.log("No user is signed in");
+    window.location.href = "../Pages/home.html";
+  }
 
-        // Get the document for the current user.
-        db.collection("profiles").add({
-            userID: userID,
-            name: userFullName,
-            latitude: lat,
-            longitude: long,
-            username: profile_username,
-            name: userFullName,  
-
-        }).then(() => {
-            window.location.href = "../Pages/home.html"; // Redirect to the thanks page
-        });
-    } else {
-        console.log("No user is signed in");
-        window.location.href = '../Pages/home.html';
-    }
-
-    //c) disable edit 
- 
+  //c) disable edit
 }
 
 // function populateUserInfo() {
@@ -106,15 +100,13 @@ function saveUserInfo() {
 //             const lat = document.getElementById("latitude").value;
 //             const long = document.getElementById("longitude").value;
 //             const profile_username = document.getElementById("profile_username").value;
-            
 
-//             db.collection("users").doc(user.uid).set({         
+//             db.collection("users").doc(user.uid).set({
 
 //                 latitude: lat,
 //                 longitude: long,
-//                 username: profile_username,                         
-                               
-                            
+//                 username: profile_username,
+
 //             }).then(function () {
 //                     console.log("New user added to firestore");
 //                     window.location.assign("../Pages/home.html");       //re-direct to main.html after signup
@@ -127,6 +119,6 @@ function saveUserInfo() {
 //             console.log("No user is logged in");
 //         }
 //     });
-    
+
 // }
 // //getInfoNewProfile()
