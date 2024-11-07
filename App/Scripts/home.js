@@ -1,16 +1,16 @@
 var currentUser; //points to the document of the user who is logged in
 
 function populateUserInfo() {
-  firebase.auth().onAuthStateChanged((user) => {
+  firebase.auth().onAuthStateChanged((profiles) => {
     // Check if user is signed in:
     if (profiles) {
       //go to the correct user document by referencing to the user uid
       currentUser = db.collection("profiles").doc(profiles.uid);
       //get the document for current user.
       console.log(currentUser);
-      currentUser.get().then((userDoc) => {
+      currentUser.get().then((profileDoc) => {
         //get the data fields of the user
-        let profileName = userDoc.data();
+        let profileName = profileDoc.data().name;
         console.log(profileName);
         // let profileSchool = userDoc.data().username;
         // let profileCity = userDoc.data().userID;
@@ -30,7 +30,11 @@ function populateUserInfo() {
       // No user is signed in.
       console.log("No user is signed in");
     }
-  });
+    
+  }
+  
+
+);
 }
 
 //call the function to run it
