@@ -1,35 +1,21 @@
 <header style="position: fixed; top: 0px;"
-  class="flex flex-col align-middle justify-center text-center bg-[hsl(45,93%,62%)] max-w-[720px] sticky"
->
+  class="flex flex-col align-middle justify-center text-center bg-[hsl(45,93%,62%)] max-w-[720px] sticky">
   <div class="text-center py-7 text-6xl">FacePalm</div>
   <div class="flex align-middle justify-center">
-    <img
-      src="../images/search.svg"
-      alt=""
-      class="relative left-20 -bottom-4 size-16"
-    />
-    <input
-      class="rounded-3xl border-black border-4 px-5 pl-24 bg-yellow-200 w-3/5 h-[100px] text-4xl"
-      type="text"
-      placeholder="Find . . ."
-    />
-    <i class="material-icons text-7xl relative -left-20 -bottom-3"
-      >filter_alt</i
-    >
-    <button href="profile.html" onclick="populateUserInfo()" class="px-1"
-      ><i class="material-icons text-8xl -ml-6">account_circle</i></button
-    >
+    <img src="../images/search.svg" alt="" class="relative left-20 -bottom-4 size-16" />
+    <input class="rounded-3xl border-black border-4 px-5 pl-24 bg-yellow-200 w-3/5 h-[100px] text-4xl" type="text"
+      placeholder="Find . . ." />
+    <i class="material-icons text-7xl relative -left-20 -bottom-3">filter_alt</i>
+    <button href="profile.html" id="profile_button" class="px-1"><i
+        class="material-icons text-8xl -ml-6">account_circle</i></button>
   </div>
   <div class="py-4">
-    <button
-      class="rounded-s-full border-black border-4 px-9 mr-[-3px] hover:bg-gray-500 text-4xl font-medium w-2/5"
-    >
+    <button class="rounded-s-full border-black border-4 px-9 mr-[-3px] hover:bg-gray-500 text-4xl font-medium w-2/5">
       <a href="posting.html">Posting</a>
     </button>
-    <button
-      class="rounded-r-full border-black border-4 px-9 ml-[-3px] hover:bg-gray-500 text-4xl font-medium w-2/5"
-    >
+    <button class="rounded-r-full border-black border-4 px-9 ml-[-3px] hover:bg-gray-500 text-4xl font-medium w-2/5">
       <a href="profile.html">Profile</a>
     </button>
   </div>
+  <script src="../Scripts/profile.js"></script>
 </header>

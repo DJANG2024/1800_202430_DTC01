@@ -55,5 +55,14 @@ function loadSkeleton() {
   console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
   loadPosts();
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
+
+  x = document.getElementById("profile_button"); addEventListener('click', () => {
+    switchToProfile()
+    console.log("button pressed");
+
+  })
+
 }
 loadSkeleton(); //invoke the function
+
+
