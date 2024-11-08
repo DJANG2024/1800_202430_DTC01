@@ -27,7 +27,7 @@ function saveUserInfo() {
 
     //a) get user entered values
     
-
+    const desc = document.getElementById("description").value;
     const lat = document.getElementById("latitude").value;
     const long = document.getElementById("longitude").value;
     const profile_username = document.getElementById("profile_username").value;
@@ -45,6 +45,7 @@ function saveUserInfo() {
         // .doc(user.uid)
         db.collection("profile").doc(user.uid)
         .set({
+            description: desc,
             latitude: lat,
             longitude: long,
             username: profile_username,

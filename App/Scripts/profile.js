@@ -1,48 +1,66 @@
-var currentUser;               //points to the document of the user who is logged in
+// var currentUser;               //points to the document of the user who is logged in
+// function populateUserInfo() {
+//     var user = firebase.auth().currentUser;
+//         // Check if user is signed in:
+
+//         if (user) {
+
+//             currentUser = db.collection("profile").doc(user.uid)
+//                 currentUser.get()
+//                 .then((userDoc) => {
+
+//                     let userLong = userDoc.data().longitude;
+//                     let user_name = userDoc.data().username;
+//                     let userLat = userDoc.data().latitude;
+//                     document.getElementById("username").innerHTML = user_name
+//                     document.getElementById("userLat").innerHTML = userLat
+//                     document.getElementById("userLat").innerHTML = userLong
+
+//                     console.log("Passed");
+
+//                 });
+//         }
+//         else {
+//             // No user is signed in.
+//             console.log("No user is signed in");
+//         }
+
+// }
 function populateUserInfo() {
-    var user = firebase.auth().currentUser;
+
+    firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
-    
+
         if (user) {
 
-            var currentUser = db.collection("profile").doc(user.uid);
-                
-                currentUser.get(userDoc => {
-                    
-                    //get the data fields of the user
-                    
+            console.log("user is signed in");
+            currentUser = db.collection("profile").doc(user.uid)
+            currentUser.get(
+            )
+                .then((userDoc) => {
+
                     let userLong = userDoc.data().longitude;
                     let user_name = userDoc.data().username;
                     let userLat = userDoc.data().latitude;
                     document.getElementById("username").innerHTML = user_name
                     document.getElementById("userLat").innerHTML = userLat
-                    document.getElementById("userLat").innerHTML = userLong
-                    //if the data fields are not empty, then write them in to the form.
-                    // document.getElementById("username").innerText = userDoc.data().username;
-                    // document.getElementById("userLat").innerText = userDoc.data().latitude;
-                    // document.getElementById("userLat").innerText = userDoc.data().longitude;
-
-                    console.log("Passed");
-                })
-                .then(() => {
-                    
-                    //if the data fields are not empty, then write them in to the form.
-                    
-                    
-                    // Redirect to the thanks page
+                    document.getElementById("userLong").innerHTML = userLong
 
                 });
-        }
-        else {
-            // No user is signed in.
+
+            currentUser = db.collection("users").doc(user.uid)
+
+            currentUser.get(
+            )
+                .then((userDoc) => {
+
+                    let fullName = userDoc.data().name;
+                    document.getElementById("fullName").innerHTML = fullName
+
+                });
+        } else {
             console.log("No user is signed in");
         }
-
-}
-function switchToProfile(){
-    console.log("recieved");
-    window.location.href = "../Pages/profile.html";
-
-
+    })
 }
 populateUserInfo()

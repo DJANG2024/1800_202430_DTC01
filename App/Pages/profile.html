@@ -23,14 +23,22 @@
 <body class="space-y-4">
     <header id="header_smallerPlaceholder"></header>
 
-    <section class="pt-[300px] w-full ">
+    <section class="pt-[300px] w-full text-center text-6xl mx-auto space-y-6">
 
-        <h1 class="text-center text-4xl mx-auto">Profile coming soon</h1>
+        <img class="size-80 mx-auto " src="https://banner2.cleanpng.com/20180404/sqe/avhxkafxo.webp" alt="#">
+        <h id="fullName" class="pt-9 font-bold"></h>
+        
     </section>
-
-    <p id="username"></p>
+    <main class="flex flex-col text-5xl space-y-7 pt-[150px] p-9 font-semibold">
+        <h class="">Username: <span id="username" class="font-normal"></span></h>
+        <h>Latitude: <span id="userLat"class="font-normal"></span></h>
+        <h>Longitude: <span id="userLong"class="font-normal"></span></h>
+    </main>
+    <nav id="navbarPlaceholder"></nav>
+   
 
     <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
+    <script src="../Scripts/skeleton.js"></script>
     <script src="../Scripts/profile.js"></script>
 
 </body>

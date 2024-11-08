@@ -56,12 +56,6 @@ function loadSkeleton() {
   loadPosts();
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
 
-  x = document.getElementById("profile_button"); addEventListener('click', () => {
-    switchToProfile()
-    console.log("button pressed");
-
-  })
-
 }
 loadSkeleton(); //invoke the function
 
