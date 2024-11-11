@@ -1,4 +1,4 @@
-var currentUser;
+// var currentUser;
 
 function upload_create_page_form() {
    
@@ -12,18 +12,16 @@ function upload_create_page_form() {
     var user = firebase.auth().currentUser;
     if (user) {
         if ((title != "") && (header != "") && (details != "")){    //make sure nothing is empty, if it is, tell them to enter it 
-            var currentUser = db.collection("users").doc(user.uid);
+            // var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             postingRef = db.collection("posting")
 
-            postingRef.add({
+            postingRef.add({  //unique ids 1-to-many
                 title: title,
                 header: header,
                 //image: image,             //DONT WORRY ABOUT THIS FOR NOW, FIREBASE WILL SHIT ITSELF IF LEFT EMPTY
                 details: details,
                 profile: userID,
-                
-
             }).then(() => {
                 console.log("SUccessfully created post");
                 // var docID = doc.id;

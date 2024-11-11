@@ -45,7 +45,7 @@ function saveUserInfo() {
         // Get the document for the current user.
         // db.collection("profile")
         // .doc(user.uid)
-        db.collection("profile").doc(user.uid)
+        db.collection("profile").doc(user.uid) //unique ids 1-to-1
         .set({
             user_description: desc,
             latitude: lat,
