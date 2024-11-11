@@ -42,11 +42,11 @@
 // ============
 //   METHOD 2
 // ============
-let number_of_post = 10;
-for (let i = 0; i < number_of_post; i++) {
-  $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
-  $(`#post${i}`).load('../Assets/feed_posting.html');
-}
+// let number_of_post = 10;
+// for (let i = 0; i < number_of_post; i++) {
+//   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
+//   $(`#post${i}`).load('../Assets/feed_posting.html');
+// }
 
 var current_post = 0;
 var concated_posting = '';
@@ -66,33 +66,35 @@ function loadPosts() {
               user = profile_doc.username;
             }
           });
-
         concated_posting += `
-        <div
-          class="border-solid border-4 border-black rounded-3xl border-box p-7 space-y-3 z-0"
-        >
-          <div class="flex flex-row justify-between">
-            <h1 class="text-7xl font-bold">${title}</h1>
-            <a href="">
-              <i class="material-icons text-7xl p-2">bookmark_add</i>
-            </a>
-          </div>
-          <div class="flex flex-row space-x-6">
-            <h1 class="text-4xl font-semibold pt-2">${user}</h1>
-            <a href="profile.html" class="px-2"
-              ><i class="material-icons text-6xl">account_circle</i></a
-            >
-          </div>
-          <button>
+        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
+          <a class="card-href" href="../Pages/view_posting.html">
+          <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
+
             <div class="flex flex-row justify-between">
-              <i class="material-icons text-[300px]">image</i>
-              <p class="text-2xl pt-7">
-                ${details}
-              </p>
+              <h1 class="text-5xl font-bold font-oswald">${title}</h1>
+              <a href="">
+                <i class="material-icons text-6xl">bookmark_add</i>
+              </a>
             </div>
-          </button>
-        </div>
-        `;
+            <div class="flex flex-row space-x-4">
+              <a href="profile.html" class="px-2">
+                <h1 class="text-3xl font-semibold font-roboto">${profile}</h1>
+              </a>
+            </div>
+            <button>
+
+                <div class="flex flex-row justify-between space-x-3">
+                  <i class="material-icons text-[150px]">image</i>
+                  <p class="text-xl pt-7 font-roboto">
+                    ${details}
+                  </p>
+                </div>
+
+            </button>
+          </div>
+        </a>
+      </div>`;
         $('#feedPostingPlaceholder').append(
           `<div id="post${current_post}">${concated_posting}</div>`
         );
