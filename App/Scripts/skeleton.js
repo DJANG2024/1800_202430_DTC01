@@ -47,6 +47,23 @@
 //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
 //   $(`#post${i}`).load('../Assets/feed_posting.html');
 // }
+function getUserName(profile) {
+  var user = '';
+  db.collection('profile')
+    .get()
+    .then((profile_doc) => {
+      allPostings.forEach((doc) => {
+        if (profile_doc == profile) {
+          user = profile_doc.username;
+        } else {
+          console.log('not working');
+          console.log(user);
+          console.log(profile);
+        }
+      });
+    });
+  return user;
+}
 
 var current_post = 0;
 var concated_posting = '';
@@ -58,14 +75,8 @@ function loadPosts() {
         var details = doc.data().details;
         var profile = doc.data().id;
         var title = doc.data().title;
-        var user = '';
-        db.collection('profile')
-          .get()
-          .then((profile_doc) => {
-            if (profile_doc == profile) {
-              user = profile_doc.username;
-            }
-          });
+        user = getUserName(profile);
+
         concated_posting += `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
           <a class="card-href" href="../Pages/view_posting.html">
@@ -79,7 +90,7 @@ function loadPosts() {
             </div>
             <div class="flex flex-row space-x-4">
               <a href="profile.html" class="px-2">
-                <h1 class="text-3xl font-semibold font-roboto">${profile}</h1>
+                <h1 class="text-3xl font-semibold font-roboto">${user}</h1>
               </a>
             </div>
             <button>
