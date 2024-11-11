@@ -17,28 +17,36 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <style>
-        .visible {
-            visibility: visible;
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily:
+                    {
+                        'oswald': ['Oswald', 'sans-serif'],
+                    }
+                },
+            },
+
         }
-    
-        .hidden {
-            visibility: hidden;
-        }
-    </style>
+    </script>
 </head>
 
-<body class="space-y-4 ">
+<body class="space-y-4">
     <header id="header_smallerPlaceholder"></header>
-   
-    <main id="create_posting" class="pt-[195px]  pb-[120px] p-4"></main>
 
+   
     <nav id="navbarPlaceholder"></nav>
+
 
     <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
     <script src="../Scripts/skeleton.js"></script>
-    <script src="../Scripts/posting_form.js"></script>
-
+    <script src="../Scripts/profile.js"></script>
 
 </body>
 

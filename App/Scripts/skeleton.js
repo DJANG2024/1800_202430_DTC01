@@ -55,6 +55,7 @@ function loadSkeleton() {
   console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
   loadPosts();
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
+  console.log($('#create_posting').load('../Assets/posting_form.html'));
 
 }
 loadSkeleton(); //invoke the function

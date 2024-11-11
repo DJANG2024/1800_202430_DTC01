@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
-  <body class="bg-slate-400 max-w-[720px] mx-5 my-5">
-    <div class="space-y-4 bg-slate-500 p-4 rounded-2xl">
-      <h1 class="text-6xl text-center">Create Posting</h1>
+<!-- the different <h> numbers are used to show asterixes when missed in the form, be careful -->
+<body class="bg-slate-400 max-w-[700px] mx-5 my-5 p-5">
+  <div class="space-y-4 bg-slate-500 p-4 rounded-2xl">
+    <h1 class="text-6xl text-center">Create Posting</h1>
 
-      <main class="p-4 space-y-6">
-        <div>
-          <h2 class="text-4xl mb-3">Title:</h2>
-          <form action="">
-            <input
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2 placeholder:text-xl placeholder:px-2 py-1"
-              type="text"
-              placeholder="Enter title"
-            />
-            <h2 class="text-4xl mt-8 mb-5">Image:</h2>
+    <main class="p-4 space-y-6">
+      <div>
+        <h2 class="text-4xl mb-3" id="h2">Title:</h2>
+        <form>
+          <input id="title"
+            class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2 placeholder:text-xl placeholder:px-2 py-1"
+            type="text" placeholder="Enter title" />
+          <h3 class="text-4xl mt-8 mb-5">Image:</h3>
 
-            <!-- <label
+          <!-- <label
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               for="file_input"
             ></label>
@@ -44,60 +29,53 @@
               SVG, PNG, JPG or GIF (MAX. 800x400px).
             </p> -->
 
-            <div class="flex items-center justify-center w-full">
-              <label
-                for="dropzone-file"
-                class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500"
-              >
-                <div
-                  class="flex flex-col items-center justify-center pt-5 pb-6"
-                >
-                  <svg
-                    class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 16"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                    />
-                  </svg>
-                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span class="font-semibold">Click to upload</span> or drag
-                    and drop
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    SVG, PNG, JPG or GIF (MAX. 800x400px)
-                  </p>
-                </div>
-                <input id="dropzone-file" type="file" class="hidden" />
-              </label>
-            </div>
+          <div class="flex items-center justify-center w-full">
+            <label for="dropzone-file"
+              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                </svg>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                  <span class="font-semibold">Click to upload</span> or drag
+                  and drop
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                </p>
+              </div>
+              <input id="dropzone-file" type="file" class="hidden" />
+            </label>
+          </div>
 
-            <h2 class="text-4xl mt-8 mb-2">Header:</h2>
-            <input
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2 placeholder:text-xl placeholder:px-2 py-1"
-              type="text"
-              placeholder="Enter Header"
-            />
-            <h2 class="text-4xl mt-8 mb-2">Details:</h2>
-            <textarea
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 w-full h-60 pb-40 pl-3 py-2 text-3xl placeholder:text-2xl"
-              type="text"
-              placeholder="Enter Details"
-            ></textarea>
+          <h4 class="text-4xl mt-8 mb-2" id="h4">Header:</h4>
+          <input id="header"
+            class="rounded-xl border-gray-200 border-2 bg-gray-200 text-3xl basis-2/3 px-2 placeholder:text-xl placeholder:px-2 py-1"
+            type="text" placeholder="Enter Header" />
+          <h5 class="text-4xl mt-8 mb-2" id="h5">Details:</h5>
+          <textarea id="details"
+            class="rounded-xl border-gray-200 border-2 bg-gray-200 w-full h-60 pb-40 pl-3 py-2 text-3xl placeholder:text-2xl"
+            type="text" placeholder="Enter Details"></textarea>
 
-            <button class="border  text-gray-400 dark:text-gray-400 mt-5 font rounded-full px-8 text-2xl  dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500"">
-              Submit
-            </button>
-          </form>
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
+
+        </form>
+      </div>
+      <div class="flex flex-row space-x-5">
+        <button onclick="upload_create_page_form()"
+          class="border  text-gray-400 dark:text-gray-400 mt-5 font rounded-3xl px-10 py-4 text-2xl  dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500">
+          Submit
+        </button>
+        <button id="missing_form"
+          class="border  text-red-500 mt-5 font rounded-3xl px-6 py-4 text-2xl bg-gray-800 border-red-500 visibility: hidden">
+          *Please fill in missing areas
+        </button>
+        <h1 class="text-red-600 text-2xl">
+
+        </h1>
+      </div>
+    </main>
+
+  </div>
+</body>

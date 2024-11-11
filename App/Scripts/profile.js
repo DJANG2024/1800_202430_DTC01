@@ -49,7 +49,7 @@ function populateUserInfo() {
                 });
 
             currentUser = db.collection("users").doc(user.uid)
-
+                //Grabs the full name from users db and puts a copy into the profile db
             currentUser.get(
             )
                 .then((userDoc) => {

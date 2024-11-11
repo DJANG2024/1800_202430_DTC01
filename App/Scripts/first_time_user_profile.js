@@ -27,11 +27,13 @@ function saveUserInfo() {
 
     //a) get user entered values
     
+
+    // BELOW: THIS CAUSES FIREBASE TO KYS, SAYING ITS UNDEFINDED. NOT SURE WHY - Ethan (NVM FIXED IT LMAO)
     const desc = document.getElementById("description").value;
     const lat = document.getElementById("latitude").value;
     const long = document.getElementById("longitude").value;
     const profile_username = document.getElementById("profile_username").value;
-
+    
 
     //b) update user's document in Firestore
     var user = firebase.auth().currentUser;
@@ -45,10 +47,11 @@ function saveUserInfo() {
         // .doc(user.uid)
         db.collection("profile").doc(user.uid)
         .set({
-            description: desc,
+            user_description: desc,
             latitude: lat,
             longitude: long,
             username: profile_username,
+            
 
         }).then(() => {
             console.log("SUccessfully added");
