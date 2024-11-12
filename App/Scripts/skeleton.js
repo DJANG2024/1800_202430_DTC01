@@ -47,22 +47,20 @@
 //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
 //   $(`#post${i}`).load('../Assets/feed_posting.html');
 // }
-function getUserName(profile) {
+function getUserName(posting) {
   var user = '';
   db.collection('profile')
     .get()
     .then((profile_doc) => {
-      allPostings.forEach((doc) => {
-        if (profile_doc == profile) {
-          user = profile_doc.username;
-        } else {
-          console.log('not working');
-          console.log(user);
-          console.log(profile);
+      profile_doc.forEach((doc) => {
+        if (posting.data().profile == doc.id) {
+          console.log(posting.data().profile == doc.id);
+          // console.log(doc.data().username);
+          // return doc.data().username;
+          return "hello"
         }
       });
     });
-  return user;
 }
 
 var current_post = 0;
@@ -75,7 +73,8 @@ function loadPosts() {
         var details = doc.data().details;
         var profile = doc.data().id;
         var title = doc.data().title;
-        user = getUserName(profile);
+        user = getUserName(doc);
+        console.log(user)
 
         concated_posting += `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
