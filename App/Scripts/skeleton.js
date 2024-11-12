@@ -65,7 +65,7 @@
 // }
 
 
-
+// Use whenever you want to find the username from a userID
 async function getUserName(profileId) {
   try {
 
