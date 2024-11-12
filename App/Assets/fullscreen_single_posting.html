@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-</head>
-
 <body class="max-w-[720px] max-h-[1280px] p-3">
     <div class="border-solid border-4 border-black rounded-3xl p-6 space-y-3">
         <header class="space-y-5">
             <div class="flex flex-row justify-between">
-                <h1 class="text-8xl font-bold">Posting</h1>
-                <a href="postings.html">
-                    <i class="material-icons text-6xl p-2">bookmark_add</i>
-                </a>
+                <h1 id="title" class="text-8xl font-bold font-oswald">Posting</h1>
+                <button onclick="userSavePost()" >
+                    <i class="material-icons text-6xl p-2" id="saved">bookmark_add</i>
+                </button>
             </div>
             <div class="flex flex-row space-x-6">
-                <h1 class="text-5xl font-semibold pt-2">User A</h1>
+                <h1 id="username" class="text-5xl font-semibold pt-2">User A</h1>
                 <a href="profile.html" class="px-2"><i class="material-icons text-7xl ">account_circle</i></a>
             </div>
         </header>
         <main>
             <div class="space-y-7 text-2xl">
-                <p>
+                <h id="header" class="font-semibold">
+                    Header goes here
+                </h>
+                <p id="details" >
                     Lorem ipsum odor amet, consectetuer adipiscing elit. Mi nullam faucibus felis eget nunc. Id
                     consequat convallis nullam
                     nostra magnis; mattis maecenas sem. Pellentesque et id aptent maecenas vitae donec convallis taciti.
@@ -57,5 +48,3 @@
 
     </div>
 </body>
-
-</html>
