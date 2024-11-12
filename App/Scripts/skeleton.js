@@ -227,9 +227,8 @@ window.addEventListener('load', () => {
 
 function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
-  console.log(
-    $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
-  );
+  console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
+  console.log($('#header_profilePlaceholder').load('../Assets/header_profile.html'));
   loadPosts();          //source of duplicates?
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
   console.log($('#create_posting').load('../Assets/posting_form.html'));
