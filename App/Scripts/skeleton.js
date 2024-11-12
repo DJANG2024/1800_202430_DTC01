@@ -107,6 +107,8 @@ function loadPosts() {
         let details = doc.data().details;
         let profile = doc.data().profile;
         let title = doc.data().title;
+        var postID = doc.id;          //Use this to pass it into the URL
+        //console.log(postID);
 
         const user = await getUserName(profile);
         //calls the username function
@@ -115,7 +117,7 @@ function loadPosts() {
         //adds info to the post
         concated_posting += `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
-          <a class="card-href" href="../Pages/view_posting.html">
+          <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
           <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
 
             <div class="flex flex-row justify-between">
@@ -187,8 +189,9 @@ function loadSkeleton() {
   console.log(
     $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
   );
-  loadPosts();
+  loadPosts();          //source of duplicates?
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
   console.log($('#create_posting').load('../Assets/posting_form.html'));
+  console.log($('#full_post').load('../Assets/fullscreen_single_posting.html'));
 }
 loadSkeleton(); //invoke the function
