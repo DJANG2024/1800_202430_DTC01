@@ -47,35 +47,72 @@
 //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
 //   $(`#post${i}`).load('../Assets/feed_posting.html');
 // }
-function getUserName(posting) {
-  var user = '';
-  db.collection('profile')
-    .get()
-    .then((profile_doc) => {
-      profile_doc.forEach((doc) => {
-        if (posting.data().profile == doc.id) {
-          console.log(posting.data().profile == doc.id);
-          // console.log(doc.data().username);
-          // return doc.data().username;
-          return "hello"
-        }
-      });
-    });
+
+// function getUserName(posting) {
+//   var user = '';
+//   db.collection('profile')
+//     .get()
+//     .then((profile_doc) => {
+//       profile_doc.forEach((doc) => {
+//         if (posting.data().profile == doc.id) {
+//           console.log(posting.data().profile == doc.id);
+//           // console.log(doc.data().username);
+//           // return doc.data().username;
+//           return "hello"
+//         }
+//       });
+//     });
+// }
+
+
+
+async function getUserName(profileId) {
+  try {
+
+    // Reference to the document in the profiles collection
+    let profileRef = db.collection('profile').doc(profileId);
+
+    // Fetch the document 
+    const userDoc = await profileRef.get();
+
+    //if it exists, give the username!
+    if (userDoc.exists) {
+      let username = userDoc.data().username;
+      console.log("username passed");
+      return username; // Return the username
+    } else {
+      console.log("username didnt pass");
+      x = "unknown";
+      return x; // If the profile doesn't exist, return null
+    }
+  } catch (error) {
+    console.error("Error getting username:", error);
+    return null;
+  }
 }
+
+
 
 var current_post = 0;
 var concated_posting = '';
+
 function loadPosts() {
+
   db.collection('posting')
     .get()
-    .then((allPostings) => {
-      allPostings.forEach((doc) => {
-        var details = doc.data().details;
-        var profile = doc.data().id;
-        var title = doc.data().title;
-        user = getUserName(doc);
-        console.log(user)
+    .then(async (snapshot) => {
+      for (const doc of snapshot.docs) {
+        // This is a similar way for .forEach but it allows async functions to be called during it
+        //we need to because we need to query the username
+        let details = doc.data().details;
+        let profile = doc.data().profile;
+        let title = doc.data().title;
 
+        const user = await getUserName(profile);
+        //calls the username function
+
+
+        //adds info to the post
         concated_posting += `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
           <a class="card-href" href="../Pages/view_posting.html">
@@ -117,14 +154,33 @@ function loadPosts() {
         // document.querySelector('p').innerHTML = details;
         // document.getElementById('userName').innerText = 'testing';
         current_post += 1;
-      });
+        // let number_of_post = 10;
+        // for (let i = 0; i < number_of_post; i++) {
+        //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
+        //   $(`#post${i}`).load('../Assets/feed_posting.html');
+        // }
+
+
+      };
+
     });
-  // let number_of_post = 10;
-  // for (let i = 0; i < number_of_post; i++) {
-  //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
-  //   $(`#post${i}`).load('../Assets/feed_posting.html');
-  // }
+
+
 }
+// db.collection('posting')
+//   .get()
+//   .then((allPostings) => {
+//     allPostings.forEach(async (doc) => {
+
+//       let details = doc.data().details;
+//       let profile = doc.data().profile;
+//       let title = doc.data().title;
+//       const user = await getUserName(profile);
+
+//       console.log(user)
+//       concated_posting += `
+
+
 
 function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
