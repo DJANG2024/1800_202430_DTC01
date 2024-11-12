@@ -164,11 +164,11 @@ function loadPosts() {
 
 
       };
-
     });
-
-
 }
+
+
+
 // db.collection('posting')
 //   .get()
 //   .then((allPostings) => {
@@ -182,7 +182,48 @@ function loadPosts() {
 //       console.log(user)
 //       concated_posting += `
 
+function profileLink() {
+  firebase.auth().onAuthStateChanged(user => {
+    // Check if user is signed in:
 
+    if (user) {
+      currentUser = db.collection("profile").doc(user.uid)
+      currentUser.get()
+        .then((userDoc) => {
+          var profileID = userDoc.id;
+          document.getElementById('profile_button').href = `../Pages/profile.html?docID=${profileID}`;
+          //Adds the users firebase ID to the URL
+        });
+    } else {
+      console.log("No user is signed in");
+    }
+  })
+
+}
+profileLink()
+
+//back button logic
+function backButton(){
+  const previousPage = sessionStorage.getItem('previousVisitedPage');
+  if (previousPage){
+    //document.getElementById('backButton').href = previousPage;
+    window.location.href = previousPage;
+  }else{
+    //document.getElementById('backButton').href = "../Pages/home.html";
+    window.location.href = "home.html";
+  }
+}
+
+//for back button, pls do not touch :3
+window.addEventListener('load', () => {
+  const previousPage = sessionStorage.getItem('currentVisitedPage');
+  sessionStorage.setItem('previousVisitedPage', previousPage);
+  //backButton(previousPage)
+  sessionStorage.setItem('currentVisitedPage', window.location.href);
+  const currentPage = sessionStorage.getItem('currentVisitedPage');
+  
+  
+});
 
 function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
