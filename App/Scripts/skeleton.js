@@ -64,6 +64,11 @@
 //     });
 // }
 
+<<<<<<< HEAD
+=======
+
+// Use whenever you want to find the username from a userID
+>>>>>>> b4642d84f59d302cdfac91e1f56c598c357ab802
 async function getUserName(profileId) {
   try {
     // Reference to the document in the profiles collection
