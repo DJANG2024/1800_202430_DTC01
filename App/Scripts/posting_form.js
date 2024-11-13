@@ -24,11 +24,12 @@ function upload_create_page_form() {
                 profile: userID,
             }).then(() => {
                 console.log("SUccessfully created post");
-                // var docID = doc.id;
-                // document.querySelector('a').href = "fullscreen_single_posting.html?docID=" + docID;     //I think this adds the link to it, i think
+
                 window.location.href = "../Pages/posting_thanks.html"; // Redirect to the thanks page
             });
-        }else{
+        }
+        
+        else{
             //missing_form
             y = document.getElementById('missing_form')
             y.classList.remove("hidden")
@@ -75,6 +76,5 @@ function upload_create_page_form() {
         window.location.href = '../Pages/home.html';
     }
 
-    //c) disable edit 
 
 }
