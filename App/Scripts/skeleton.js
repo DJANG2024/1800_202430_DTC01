@@ -64,40 +64,35 @@
 //     });
 // }
 
-
 // Use whenever you want to find the username from a userID
 async function getUserName(profileId) {
   try {
-
     // Reference to the document in the profiles collection
     let profileRef = db.collection('profile').doc(profileId);
 
-    // Fetch the document 
+    // Fetch the document
     const userDoc = await profileRef.get();
 
     //if it exists, give the username!
     if (userDoc.exists) {
       let username = userDoc.data().username;
-      console.log("username passed");
+      console.log('username passed');
       return username; // Return the username
     } else {
-      console.log("username didnt pass");
-      x = "unknown";
+      console.log('username didnt pass');
+      x = 'unknown';
       return x; // If the profile doesn't exist, return null
     }
   } catch (error) {
-    console.error("Error getting username:", error);
+    console.error('Error getting username:', error);
     return null;
   }
 }
-
-
 
 var current_post = 0;
 var concated_posting = '';
 
 function loadPosts() {
-
   db.collection('posting')
     .get()
     .then(async (snapshot) => {
@@ -107,12 +102,11 @@ function loadPosts() {
         let details = doc.data().details;
         let profile = doc.data().profile;
         let title = doc.data().title;
-        var postID = doc.id;          //Use this to pass it into the URL
+        var postID = doc.id; //Use this to pass it into the URL
         //console.log(postID);
 
         const user = await getUserName(profile);
         //calls the username function
-
 
         //adds info to the post
         concated_posting += `
@@ -161,13 +155,9 @@ function loadPosts() {
         //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
         //   $(`#post${i}`).load('../Assets/feed_posting.html');
         // }
-
-
-      };
+      }
     });
 }
-
-
 
 // db.collection('posting')
 //   .get()
@@ -183,34 +173,34 @@ function loadPosts() {
 //       concated_posting += `
 
 function profileLink() {
-  firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
 
     if (user) {
-      currentUser = db.collection("profile").doc(user.uid)
-      currentUser.get()
-        .then((userDoc) => {
-          var profileID = userDoc.id;
-          document.getElementById('profile_button').href = `../Pages/profile.html?docID=${profileID}`;
-          //Adds the users firebase ID to the URL
-        });
+      currentUser = db.collection('profile').doc(user.uid);
+      currentUser.get().then((userDoc) => {
+        var profileID = userDoc.id;
+        document.getElementById(
+          'profile_button'
+        ).href = `../Pages/profile.html?docID=${profileID}`;
+        //Adds the users firebase ID to the URL
+      });
     } else {
-      console.log("No user is signed in");
+      console.log('No user is signed in');
     }
-  })
-
+  });
 }
-profileLink()
+profileLink();
 
 //back button logic
-function backButton(){
+function backButton() {
   const previousPage = sessionStorage.getItem('previousVisitedPage');
-  if (previousPage){
+  if (previousPage) {
     //document.getElementById('backButton').href = previousPage;
     window.location.href = previousPage;
-  }else{
+  } else {
     //document.getElementById('backButton').href = "../Pages/home.html";
-    window.location.href = "home.html";
+    window.location.href = 'home.html';
   }
 }
 
@@ -221,17 +211,27 @@ window.addEventListener('load', () => {
   //backButton(previousPage)
   sessionStorage.setItem('currentVisitedPage', window.location.href);
   const currentPage = sessionStorage.getItem('currentVisitedPage');
-  
-  
 });
 
 function loadSkeleton() {
+  //header: home page
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
-  console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
-  console.log($('#header_profilePlaceholder').load('../Assets/header_profile.html'));
-  loadPosts();          //source of duplicates?
+  //header: about us
+  console.log($('#headerAboutUs').load('../Assets/header_aboutUs.html'));
+  //header: back and profile
+  console.log(
+    $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
+  );
+  //header: back and cog
+  console.log(
+    $('#header_profilePlaceholder').load('../Assets/header_profile.html')
+  );
+  loadPosts(); //source of duplicates?
+  //Bottom: nav bar
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
+  //Body: create post form
   console.log($('#create_posting').load('../Assets/posting_form.html'));
+  //Body: single post
   console.log($('#full_post').load('../Assets/fullscreen_single_posting.html'));
 }
 loadSkeleton(); //invoke the function

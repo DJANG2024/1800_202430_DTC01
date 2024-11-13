@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily:
-                    {
-                        'oswald': ['Oswald', 'sans-serif'],
-                    }
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              oswald: ['Oswald', 'sans-serif'],
             },
-
-        }
+          },
+        },
+      };
     </script>
-</head>
+  </head>
 
-<body class="space-y-4">
+  <body class="space-y-4">
     <header id="header_profilePlaceholder"></header>
 
     <section class="pt-[300px] w-full text-center text-6xl mx-auto space-y-6">
-
-        <img class="size-80 mx-auto " src="https://banner2.cleanpng.com/20180404/sqe/avhxkafxo.webp" alt="#">
-        <h id="fullName" class="pt-9 font-bold"></h>
-        
+      <img
+        class="size-80 mx-auto"
+        src="https://banner2.cleanpng.com/20180404/sqe/avhxkafxo.webp"
+        alt="#"
+      />
+      <h id="fullName" class="pt-9 font-bold"></h>
     </section>
     <main class="flex flex-col text-5xl space-y-7 pt-[100px] p-9 font-semibold">
-        <h class="">Username: <span id="username" class="font-normal"></span></h>
-        <h>Latitude: <span id="userLat"class="font-normal"></span></h>
-        <h>Longitude: <span id="userLong"class="font-normal"></span></h>
+      <h class="">Username: <span id="username" class="font-normal"></span></h>
+      <h>Latitude: <span id="userLat" class="font-normal"></span></h>
+      <h>Longitude: <span id="userLong" class="font-normal"></span></h>
 
-
-        <div class=" flex flex-col mx-auto text-center pt-[80px] p-5 space-y-7 pb-8">
-            <h class="text-3xl italic font-normal">Scroll down to see your active posts</h>
-            <h class="text-6xl">Your posts!</h>
-        </div>
-        <section id="feedProfile" class="  w-full pb-[100px]"></section>
+      <div
+        class="flex flex-col mx-auto text-center pt-[80px] p-5 space-y-7 pb-8"
+      >
+        <h class="text-3xl italic font-normal"
+          >Scroll down to see your active posts</h
+        >
+        <h class="text-6xl">Your posts!</h>
+      </div>
+      <section id="feedProfile" class="w-full pb-[100px]"></section>
     </main>
     <nav id="navbarPlaceholder"></nav>
-   
 
     <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
     <script src="../Scripts/skeleton.js"></script>
     <script src="../Scripts/profile.js"></script>
     <script src="../Scripts/saved_post.js"></script>
-
-</body>
-
+  </body>
 </html>
