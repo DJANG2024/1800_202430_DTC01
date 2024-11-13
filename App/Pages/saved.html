@@ -10,19 +10,53 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily:
+                    {
+                        'oswald': ['Oswald', 'sans-serif'], //oswald (title)
+                        'poppins': ['Poppins', 'sans-serif'], //poppins
+                        'fira': ['Fira Sans', 'sans-serif'], // fira
+                    }
+                },
+            },
+
+        }
+    </script>
+
 </head>
 
 <body class="space-y-4">
     <header id="headerPlaceholder"></header>
 
-    <section id="feedPostingPlaceholder" class="pt-[300px]  w-full "></section>
+    <!-- <section id="feedPostingPlaceholder" class="pt-[300px]  w-full "></section> -->
 
 
 
     <nav id="navbarPlaceholder"></nav>
 
-
+    <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
     <script src="../Scripts/skeleton.js"></script>
+    <script src="../Scripts/profile.js"></script>
+    <script src="../Scripts/view_posting.js"></script>
+    <script src="../Scripts/saved_post.js"></script>
+
 
 </body>
 

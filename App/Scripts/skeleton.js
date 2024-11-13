@@ -66,6 +66,9 @@
 
 
 // Use whenever you want to find the username from a userID
+
+
+
 async function getUserName(profileId) {
   try {
 
@@ -203,12 +206,12 @@ function profileLink() {
 profileLink()
 
 //back button logic
-function backButton(){
+function backButton() {
   const previousPage = sessionStorage.getItem('previousVisitedPage');
-  if (previousPage){
+  if (previousPage) {
     //document.getElementById('backButton').href = previousPage;
     window.location.href = previousPage;
-  }else{
+  } else {
     //document.getElementById('backButton').href = "../Pages/home.html";
     window.location.href = "home.html";
   }
@@ -221,8 +224,8 @@ window.addEventListener('load', () => {
   //backButton(previousPage)
   sessionStorage.setItem('currentVisitedPage', window.location.href);
   const currentPage = sessionStorage.getItem('currentVisitedPage');
-  
-  
+
+
 });
 
 function loadSkeleton() {
