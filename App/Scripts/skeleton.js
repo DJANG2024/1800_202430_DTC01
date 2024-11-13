@@ -81,10 +81,10 @@ async function getUserName(profileId) {
     //if it exists, give the username!
     if (userDoc.exists) {
       let username = userDoc.data().username;
-      console.log("username passed");
+      //console.log("username passed");
       return username; // Return the username
     } else {
-      console.log("username didnt pass");
+      //console.log("username didnt pass");
       x = "unknown";
       return x; // If the profile doesn't exist, return null
     }
@@ -98,30 +98,23 @@ async function getUserName(profileId) {
 
 var current_post = 0;
 var concated_posting = '';
+//loadPosts() // use for the feed (all postings)
+//loadPosts(the posts ID) // use for singular postings 
 
-function loadPosts() {
-
-  db.collection('posting')
-    .get()
-    .then(async (snapshot) => {
-      for (const doc of snapshot.docs) {
-        // This is a similar way for .forEach but it allows async functions to be called during it
-        //we need to because we need to query the username
-        let details = doc.data().details;
-        let profile = doc.data().profile;
-        let title = doc.data().title;
-        var postID = doc.id;          //Use this to pass it into the URL
-        //console.log(postID);
-
-        const user = await getUserName(profile);
-        //calls the username function
-
-
-        //adds info to the post
-        concated_posting += `
+function loadPosts(postID) {
+  if (postID) {
+    db.collection("posting").doc(postID).get()
+    .then(async(postDoc) =>{
+      let details = postDoc.data().details;
+      let profile = postDoc.data().profile;
+      let title = postDoc.data().title;
+      var postID = postDoc.id;
+      console.log(details);
+      const user = await getUserName(profile);
+      concated_posting = `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
-          <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
+            <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
@@ -146,28 +139,73 @@ function loadPosts() {
             </button>
           </div>
         </a>
-      </div>`;
-        $('#feedPostingPlaceholder').append(
-          `<div id="post${current_post}">${concated_posting}</div>`
-        );
-        // $(`#post${current_post}`).load('../Assets/feed_posting.html');
-
-        // document.querySelector($(`#post${current_post}`)).innerHTML = 'testing';
-        // $(`h1:nth-child(1)`).innerHTML = title;
-        // $(`h1:nth-child(2)`).innerHTML = user;
-        // $(`p:nth-child(1)`).innerHTML = details;
-        // document.querySelector('p').innerHTML = details;
-        // document.getElementById('userName').innerText = 'testing';
-        current_post += 1;
-        // let number_of_post = 10;
-        // for (let i = 0; i < number_of_post; i++) {
-        //   $('#feedPostingPlaceholder').append(`<div id="post${i}"></div>`);
-        //   $(`#post${i}`).load('../Assets/feed_posting.html');
-        // }
+        </div>`;
+      $('#savedFeedPosting').append(
+        `<div id="post${current_post}">${concated_posting}</div>`
+      );
+      current_post += 1;
+      
+    })
+  } 
+  else {
 
 
-      };
-    });
+
+    db.collection('posting')
+      .get()
+      .then(async (snapshot) => {
+        for (const doc of snapshot.docs) {
+          // This is a similar way for .forEach but it allows async functions to be called during it
+          //we need to because we need to query the username
+          let details = doc.data().details;
+          let profile = doc.data().profile;
+          let title = doc.data().title;
+          var postID = doc.id;          //Use this to pass it into the URL
+          //console.log(postID);
+
+          const user = await getUserName(profile);
+          //calls the username function
+
+
+          //adds info to the post
+          concated_posting = `
+        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
+          <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
+            <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
+
+            <div class="flex flex-row justify-between">
+              <h1 class="text-5xl font-bold font-oswald">${title}</h1>
+              <a href="">
+                <i class="material-icons text-6xl">bookmark_add</i>
+              </a>
+            </div>
+            <div class="flex flex-row space-x-4">
+              <a href="profile.html" class="px-2">
+                <h1 class="text-3xl font-semibold font-roboto">${user}</h1>
+              </a>
+            </div>
+            <button>
+
+                <div class="flex flex-row justify-between space-x-3">
+                  <i class="material-icons text-[150px]">image</i>
+                  <p class="text-xl pt-7 font-roboto">
+                    ${details}
+                  </p>
+                </div>
+
+            </button>
+          </div>
+        </a>
+        </div>`;
+          $('#feedPostingPlaceholder').append(
+            `<div id="post${current_post}">${concated_posting}</div>`
+          );
+
+          current_post += 1;
+
+        };
+      });
+  }
 }
 
 
@@ -232,7 +270,7 @@ function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
   console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
   console.log($('#header_profilePlaceholder').load('../Assets/header_profile.html'));
-  loadPosts();          //source of duplicates?
+  loadPosts();          //source of duplicates? NOPE
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
   console.log($('#create_posting').load('../Assets/posting_form.html'));
   console.log($('#full_post').load('../Assets/fullscreen_single_posting.html'));

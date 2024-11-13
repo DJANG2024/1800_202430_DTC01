@@ -96,46 +96,83 @@ async function userSavePost() {
                 userSaved.doc(ID).set({})
                     .then(() => {
                         console.log("added the favourite!");
-                        
-
                         document.getElementById("saved").innerText = 'bookmark';
                     })
             }
-
         }
         else {
             console.log("user is not logged in");
         }
-        
-
-
     })
-        
-    
 }
+
+
+
+async function savedPage() {
+    firebase.auth().onAuthStateChanged(async user => {
+        // Check if user is signed in:
+        if (user) {
+            let collectionRef = db.collection('users').doc(user.uid).collection('saved');
+
+            // Fetch all documents in the collection
+            const querySnapshot = await collectionRef.get();
+
+            // Check if the collection is empty
+            if (querySnapshot.empty) {
+                console.log("No documents found.");
+                return;
+            }
+
+    
+            for (const doc of querySnapshot.docs) {
+                try {
+                    console.log(`Processing document ID: ${doc.id}`);
+                    //const data = doc.data();
+                    const postID = doc.id;
+                    await loadPosts(postID);
+                    //db.collection("posting").doc(postID)
+                    // db.collection("posting").doc(postID).get()
+                    //     .then(async (postDoc) => {
+                    //         let details = postDoc.data().details;
+                    //         let profile = postDoc.data().profile;
+                    //         let title = postDoc.data().title;
+                    //         var postID = postDoc.id;
+                    //         console.log(details);
+                    //         const user = await getUserName(profile);
+
+
+                    //     })
+
+                    
+                } catch (error) {
+                    console.error("Error processing document:", error);
+                }
+            }
+        }
+        else {
+            console.log("not logged in");
+        }
+    });
+}
+
+savedPage();
+
+
 // //fix soon -ethan
-// var currentUser;
-// async function displaySavedIcon() {
 
-//     let params = new URL(window.location.href); //get URL of search bar
-//     let ID = params.searchParams.get("docID"); //get value for key "id"
-//     console.log(ID);                        //the posts ID from firebase, important so we can suck the info off it
-//     var user = firebase.auth().currentUser;
 
-//     if (user) {
-//         // Reference to the document in the profiles collection
-//         currentUser.get().then(userDoc => {
-//             //get the user name
-//             var bookmarks = userDoc.data().bookmarks;
-//             if (bookmarks.includes(ID)) {
-//                 document.getElementById('saved').innerText = 'bookmark';
-//             }
-//             else{
-//                 document.getElementById('saved').innerText = 'bookmark_add';
-//             }
-//         })
-//     } else {
-//         console.log("No such post!");
+// db.collection('posting').doc(userDoc)
+//     .get()
+//     .then(async (userDoc) => {
+//         for (const doc of userDoc.docs) {
+//             // This is a similar way for .forEach but it allows async functions to be called during it
+//             //we need to because we need to query the username
+//             let details = doc.data().details;
+//             let profile = doc.data().profile;
+//             let title = doc.data().title;
+//             var postID = doc.id;          //Use this to pass it into the URL
+//             //console.log(postID);
+
+//             const user = await getUserName(profile);
+//         }
 //     }
-
-// }
