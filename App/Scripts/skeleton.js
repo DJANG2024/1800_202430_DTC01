@@ -108,6 +108,7 @@ function loadPosts(postID) {
       let details = postDoc.data().details;
       let profile = postDoc.data().profile;
       let title = postDoc.data().title;
+      let rate = postDoc.data().rate;
       var postID = postDoc.id;
       console.log(details);
       const user = await getUserName(profile);
@@ -118,9 +119,8 @@ function loadPosts(postID) {
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <a href="">
-                <i class="material-icons text-6xl">bookmark_add</i>
-              </a>
+              
+              
             </div>
             <div class="flex flex-row space-x-4">
               <a href="profile.html" class="px-2">
@@ -160,6 +160,7 @@ function loadPosts(postID) {
           let details = doc.data().details;
           let profile = doc.data().profile;
           let title = doc.data().title;
+          //let rate = postDoc.data().rate;
           var postID = doc.id;          //Use this to pass it into the URL
           //console.log(postID);
 
@@ -175,9 +176,7 @@ function loadPosts(postID) {
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <a href="">
-                <i class="material-icons text-6xl">bookmark_add</i>
-              </a>
+              
             </div>
             <div class="flex flex-row space-x-4">
               <a href="profile.html" class="px-2">

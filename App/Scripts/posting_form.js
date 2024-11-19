@@ -1,4 +1,29 @@
-// var currentUser;
+
+function process_radio() {
+
+    var checked = document.getElementById('bordered-radio-1').checked;
+    console.log(checked);
+    const x = document.getElementById("rate");
+
+    z = document.getElementById('bordered-radio-1')
+    z.addEventListener("click", () => {
+        x.classList.remove("hidden")
+        console.log("hidden");
+    });
+
+    y = document.getElementById('bordered-radio-2')
+    y.addEventListener("click", () => {
+        x.classList.add("hidden")
+        
+        console.log("visible");
+    });
+
+}
+process_radio()
+
+
+
+
 
 function upload_create_page_form() {
    
@@ -6,6 +31,7 @@ function upload_create_page_form() {
     const header = document.getElementById("header").value;
     //const image = document.getElementById("dropzone-file").value;
     const details = document.getElementById("details").value;
+    const rate = document.getElementById("rate").value;
 
 
     //b) update user's document in Firestore
@@ -19,6 +45,7 @@ function upload_create_page_form() {
             postingRef.add({  //unique ids 1-to-many
                 title: title,
                 header: header,
+                //rate: rate,
                 //image: image,             //DONT WORRY ABOUT THIS FOR NOW, FIREBASE WILL SHIT ITSELF IF LEFT EMPTY
                 details: details,
                 profile: userID,
