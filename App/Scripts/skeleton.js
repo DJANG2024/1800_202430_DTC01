@@ -64,18 +64,14 @@
 //     });
 // }
 
-
 // Use whenever you want to find the username from a userID
-
-
 
 async function getUserName(profileId) {
   try {
-
     // Reference to the document in the profiles collection
     let profileRef = db.collection('profile').doc(profileId);
 
-    // Fetch the document 
+    // Fetch the document
     const userDoc = await profileRef.get();
 
     //if it exists, give the username!
@@ -85,43 +81,43 @@ async function getUserName(profileId) {
       return username; // Return the username
     } else {
       //console.log("username didnt pass");
-      x = "unknown";
+      x = 'unknown';
       return x; // If the profile doesn't exist, return null
     }
   } catch (error) {
-    console.error("Error getting username:", error);
+    console.error('Error getting username:', error);
     return null;
   }
 }
 
-
-
 var current_post = 0;
 var concated_posting = '';
 //loadPosts() // use for the feed (all postings)
-//loadPosts(the posts ID) // use for singular postings 
+//loadPosts(the posts ID) // use for singular postings
 
 function loadPosts(postID) {
   if (postID) {
-    db.collection("posting").doc(postID).get()
-    .then(async(postDoc) =>{
-      let details = postDoc.data().details;
-      let profile = postDoc.data().profile;
-      let title = postDoc.data().title;
-      let rate = postDoc.data().rate;
-      var postID = postDoc.id;
-      console.log(details);
-      const user = await getUserName(profile);
-      //
-      //
-      concated_posting = `
+    db.collection('posting')
+      .doc(postID)
+      .get()
+      .then(async (postDoc) => {
+        let details = postDoc.data().details;
+        let profile = postDoc.data().profile;
+        let title = postDoc.data().title;
+        let rate = postDoc.data().rate;
+        var postID = postDoc.id;
+        console.log(details);
+        const user = await getUserName(profile);
+        //
+        //
+        concated_posting = `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
             <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <h1 class="text-2xl font-semibold">
+              <h1 class="text-2xl font-semibold ">
                 $${rate}
               </h1>
               
@@ -145,17 +141,12 @@ function loadPosts(postID) {
           </div>
         </a>
         </div>`;
-      $('#savedFeedPosting').append(
-        `<div id="post${current_post}">${concated_posting}</div>`
-      );
-      current_post += 1;
-      
-    })
-  } 
-  else {
-
-
-
+        $('#savedFeedPosting').append(
+          `<div id="post${current_post}">${concated_posting}</div>`
+        );
+        current_post += 1;
+      });
+  } else {
     db.collection('posting')
       .get()
       .then(async (snapshot) => {
@@ -166,12 +157,11 @@ function loadPosts(postID) {
           let profile = doc.data().profile;
           let title = doc.data().title;
           let rate = doc.data().rate;
-          var postID = doc.id;          //Use this to pass it into the URL
+          var postID = doc.id; //Use this to pass it into the URL
           //console.log(postID);
 
           const user = await getUserName(profile);
           //calls the username function
-
 
           //adds info to the post
           concated_posting = `
@@ -181,7 +171,7 @@ function loadPosts(postID) {
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <h1 id="userRate" class="text-2xl font-semibold">
+              <h1 id="userRate" class="text-2xl font-semibold bg-green-500 rounded-2xl px-3">
                 $${rate}
               </h1>
             </div>
@@ -208,13 +198,10 @@ function loadPosts(postID) {
           );
 
           current_post += 1;
-
-        };
+        }
       });
   }
 }
-
-
 
 // db.collection('posting')
 //   .get()
@@ -230,24 +217,24 @@ function loadPosts(postID) {
 //       concated_posting += `
 
 function profileLink() {
-  firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
 
     if (user) {
-      currentUser = db.collection("profile").doc(user.uid)
-      currentUser.get()
-        .then((userDoc) => {
-          var profileID = userDoc.id;
-          document.getElementById('profile_button').href = `../Pages/profile.html?docID=${profileID}`;
-          //Adds the users firebase ID to the URL
-        });
+      currentUser = db.collection('profile').doc(user.uid);
+      currentUser.get().then((userDoc) => {
+        var profileID = userDoc.id;
+        document.getElementById(
+          'profile_button'
+        ).href = `../Pages/profile.html?docID=${profileID}`;
+        //Adds the users firebase ID to the URL
+      });
     } else {
-      console.log("No user is signed in");
+      console.log('No user is signed in');
     }
-  })
-
+  });
 }
-profileLink()
+profileLink();
 
 //back button logic
 function backButton() {
@@ -257,7 +244,7 @@ function backButton() {
     window.location.href = previousPage;
   } else {
     //document.getElementById('backButton').href = "../Pages/home.html";
-    window.location.href = "home.html";
+    window.location.href = 'home.html';
   }
 }
 
@@ -268,15 +255,17 @@ window.addEventListener('load', () => {
   //backButton(previousPage)
   sessionStorage.setItem('currentVisitedPage', window.location.href);
   const currentPage = sessionStorage.getItem('currentVisitedPage');
-
-
 });
 
 function loadSkeleton() {
   console.log($('#headerPlaceholder').load('../Assets/header.html'));
-  console.log($('#header_smallerPlaceholder').load('../Assets/header_smaller.html'));
-  console.log($('#header_profilePlaceholder').load('../Assets/header_profile.html'));
-  loadPosts();          //source of duplicates? NOPE
+  console.log(
+    $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
+  );
+  console.log(
+    $('#header_profilePlaceholder').load('../Assets/header_profile.html')
+  );
+  loadPosts(); //source of duplicates? NOPE
   console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
   console.log($('#create_posting').load('../Assets/posting_form.html'));
   console.log($('#full_post').load('../Assets/fullscreen_single_posting.html'));
