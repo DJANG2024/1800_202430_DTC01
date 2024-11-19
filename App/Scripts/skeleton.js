@@ -112,6 +112,8 @@ function loadPosts(postID) {
       var postID = postDoc.id;
       console.log(details);
       const user = await getUserName(profile);
+      //
+      //
       concated_posting = `
         <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
@@ -119,6 +121,9 @@ function loadPosts(postID) {
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
+              <h1 class="text-2xl font-semibold">
+                $${rate}
+              </h1>
               
               
             </div>
@@ -160,7 +165,7 @@ function loadPosts(postID) {
           let details = doc.data().details;
           let profile = doc.data().profile;
           let title = doc.data().title;
-          //let rate = postDoc.data().rate;
+          let rate = doc.data().rate;
           var postID = doc.id;          //Use this to pass it into the URL
           //console.log(postID);
 
@@ -176,7 +181,9 @@ function loadPosts(postID) {
 
             <div class="flex flex-row justify-between">
               <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              
+              <h1 id="userRate" class="text-2xl font-semibold">
+                $${rate}
+              </h1>
             </div>
             <div class="flex flex-row space-x-4">
               <a href="profile.html" class="px-2">

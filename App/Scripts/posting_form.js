@@ -37,7 +37,7 @@ function upload_create_page_form() {
     //b) update user's document in Firestore
     var user = firebase.auth().currentUser;
     if (user) {
-        if ((title != "") && (header != "") && (details != "")){    //make sure nothing is empty, if it is, tell them to enter it 
+        if ((title != "") && (header != "") && (details != "") && (rate != "")){    //make sure nothing is empty, if it is, tell them to enter it 
             // var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             postingRef = db.collection("posting")
@@ -45,7 +45,7 @@ function upload_create_page_form() {
             postingRef.add({  //unique ids 1-to-many
                 title: title,
                 header: header,
-                //rate: rate,
+                rate: rate,
                 //image: image,             //DONT WORRY ABOUT THIS FOR NOW, FIREBASE WILL SHIT ITSELF IF LEFT EMPTY
                 details: details,
                 profile: userID,
@@ -71,11 +71,21 @@ function upload_create_page_form() {
                 console.log("no title");
                 a.innerHTML = `Title: <span class="text-red-600">*</span>`
             }
+            
             else {
-                a = document.getElementById('h5')
+                a = document.getElementById('h6')
                 a.innerHTML = `Title: `
             }
-
+            if (rate == "") {
+                a = document.getElementById('h7')
+                console.log("no title");
+                a.innerHTML = `Rate: <span class="text-red-600">*</span>`
+            }
+            else{
+                a = document.getElementById('h7')
+                console.log("no title");
+                a.innerHTML = `Rate: `
+            }
             if (header == "") {
                 a = document.getElementById('h4')
                 console.log("no header");
