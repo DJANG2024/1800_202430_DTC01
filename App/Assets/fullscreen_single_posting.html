@@ -1,19 +1,24 @@
-<body class="max-w-[720px] max-h-[1280px] p-3">
-  <div class="border-solid border-4 border-black rounded-3xl p-6 space-y-3">
+<body class="">
+  <div
+    class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto p-8"
+  >
     <header class="space-y-5">
       <div class="flex flex-row justify-between">
-        <h1 id="title" class="text-8xl font-bold font-oswald">Posting</h1>
+        <h1 id="title" class="text-3xl font-bold font-oswald">Posting</h1>
         <button onclick="userSavePost()">
-          <i class="material-icons text-6xl p-2" id="saved">bookmark_add</i>
+          <i class="material-icons text-2xl p-2" id="saved">bookmark_add</i>
         </button>
       </div>
-      <div class="flex flex-row space-x-6">
-        <h1 id="username" class="text-5xl font-semibold pt-2">User A</h1>
-        <a href="profile.html" class="px-2"
-          ><i class="material-icons text-7xl">account_circle</i></a
+      <a href="profile.html">
+        <div
+          class="flex flex-row space-x-6 align-middle border-solid border-4 border-[#12263A] rounded-3xl w-2/5 px-2"
         >
-      </div>
+          <h1 id="username" class="text-2xl font-semibold">User A</h1>
+          <i class="material-icons text-4xl">account_circle</i>
+        </div>
+      </a>
     </header>
+
     <main>
       <div class="space-y-7 text-2xl">
         <h id="header" class="font-semibold"> Header goes here </h>
