@@ -1,48 +1,39 @@
 function populateUserInfo() {
-
-  firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
 
     if (user) {
-
       //console.log("user is signed in");
-      currentUser = db.collection("profile").doc(user.uid)
-      currentUser.get(
-      )
-        .then((userDoc) => {
+      currentUser = db.collection('profile').doc(user.uid);
+      currentUser.get().then((userDoc) => {
+        let userLong = userDoc.data().longitude;
+        let user_name = userDoc.data().username;
+        let userLat = userDoc.data().latitude;
+        document.getElementById('username').innerHTML = user_name;
+        document.getElementById('userLat').innerHTML = userLat;
+        document.getElementById('userLong').innerHTML = userLong;
+      });
 
-          let userLong = userDoc.data().longitude;
-          let user_name = userDoc.data().username;
-          let userLat = userDoc.data().latitude;
-          document.getElementById("username").innerHTML = user_name
-          document.getElementById("userLat").innerHTML = userLat
-          document.getElementById("userLong").innerHTML = userLong
-
-        });
-
-      currentUser = db.collection("users").doc(user.uid)
+      currentUser = db.collection('users').doc(user.uid);
       //Grabs the full name from users db and puts a copy into the profile db
-      currentUser.get(
-      )
-        .then((userDoc) => {
-
-          let fullName = userDoc.data().name;
-          document.getElementById("fullName").innerHTML = fullName
-
-        });
+      currentUser.get().then((userDoc) => {
+        let fullName = userDoc.data().name;
+        document.getElementById('fullName').innerHTML = fullName;
+      });
     } else {
-      console.log("No user is signed in");
+      console.log('No user is signed in');
     }
-  })
+  });
 }
-populateUserInfo()
+populateUserInfo();
 
 var current_post = 0;
 var concated_posting = '';
 
-function loadMyPosts() {        //posts under profile
+function loadMyPosts() {
+  //posts under profile
   let params = new URL(window.location.href); //get URL of search bar
-  let ID = params.searchParams.get("docID"); //get value for key "id"
+  let ID = params.searchParams.get('docID'); //get value for key "id"
   //the posts ID from firebase, important so we can suck the info off it
 
   db.collection('posting')
@@ -54,13 +45,11 @@ function loadMyPosts() {        //posts under profile
         let details = doc.data().details;
         let profile = doc.data().profile;
         let title = doc.data().title;
-        var postID = doc.id;          //Use this to pass it into the URL
+        var postID = doc.id; //Use this to pass it into the URL
         const user = await getUserName(profile);
         //console.log(ID);    //UNCOMMENT
         //console.log(profile); //UNCOMMENT
         if (ID == profile) {
- 
-          
           concated_posting = `
             <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
               <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
@@ -95,14 +84,10 @@ function loadMyPosts() {        //posts under profile
           );
           //console.log("appended post"); UNCOMMENT
           current_post += 1;
-        }
-        else {
+        } else {
           //console.log("does not match");
         }
-      };
-
+      }
     });
-
-
 }
-loadMyPosts()
+loadMyPosts();
