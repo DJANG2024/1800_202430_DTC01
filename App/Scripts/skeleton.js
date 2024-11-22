@@ -111,7 +111,7 @@ function loadPosts(postID) {
         //
         //
         concated_posting = `
-        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
+        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto " >
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
             <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
 
@@ -165,34 +165,31 @@ function loadPosts(postID) {
 
           //adds info to the post
           concated_posting = `
-        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
+        <div class="border-solid border-4 border-black rounded-3xl bg-yellow-50 mb-4 w-[90%] mx-auto min-h-[300px] ">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
-            <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
-
-            <div class="flex flex-row justify-between">
-              <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <h1 id="userRate" class="text-2xl font-semibold bg-green-500 rounded-2xl px-3">
-                $${rate}
-              </h1>
-            </div>
-            <div class="flex flex-row space-x-4">
-              <a href="profile.html" class="px-2">
-                <h1 class="text-3xl font-semibold font-roboto">${user}</h1>
-              </a>
-            </div>
-            <button>
-
-                <div class="flex flex-row justify-between space-x-3">
-                  <i class="material-icons text-[150px]">image</i>
+            <div class="p-8">
+              <div class="font-bold font-oswald flex flex-row justify-between">
+                <div class="text-3xl">${title}</div>
+                <div id="userRate" class="text-2xl bg-green-500 rounded-2xl px-3 h-10">
+                  $${rate}
+                </div>
+              </div>
+              <div class="flex flex-row space-x-4">
+                <a href="profile.html" class="px-2">
+                  <h1 class="text-xl font-semibold font-roboto">${user}</h1>
+                </a>
+              </div>
+                <div class="">
+                  <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
                   <p class="text-xl pt-7 font-roboto">
                     ${details}
                   </p>
                 </div>
-
-            </button>
-          </div>
-        </a>
+              </div>
+            </div>
+          </a>
         </div>`;
+
           $('#feedPostingPlaceholder').append(
             `<div id="post${current_post}">${concated_posting}</div>`
           );
