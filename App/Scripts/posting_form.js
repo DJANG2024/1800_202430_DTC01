@@ -1,19 +1,18 @@
 function process_radio() {
   var checked = document.getElementById('bordered-radio-1').checked;
-  console.log(checked);
+  //   console.log(checked);
   const x = document.getElementById('rate');
 
   z = document.getElementById('bordered-radio-1');
   z.addEventListener('click', () => {
     x.classList.remove('hidden');
-    console.log('hidden');
+    // console.log('hidden');
   });
 
   y = document.getElementById('bordered-radio-2');
   y.addEventListener('click', () => {
     x.classList.add('hidden');
-
-    console.log('visible');
+    // console.log('visible');
   });
 }
 process_radio();
@@ -53,7 +52,7 @@ function upload_create_page_form() {
       //missing_form
       y = document.getElementById('missing_form');
       y.classList.remove('hidden');
-      console.log('no worko');
+      //   console.log('not working');
 
       //the different <h> numbers are used to show asterixes when missed in the form, be careful
       //h2 = title, h3 = image (not set up) h4 = header, h5 = details
@@ -61,7 +60,7 @@ function upload_create_page_form() {
 
       if (title == '') {
         a = document.getElementById('h2');
-        console.log('no title');
+        // console.log('no title');
         a.innerHTML = `Title: <span class="text-red-600">*</span>`;
       } else {
         a = document.getElementById('h6');
@@ -69,16 +68,16 @@ function upload_create_page_form() {
       }
       if (rate == '') {
         a = document.getElementById('h7');
-        console.log('no title');
+        // console.log('no title');
         a.innerHTML = `Rate: <span class="text-red-600">*</span>`;
       } else {
         a = document.getElementById('h7');
-        console.log('no title');
+        // console.log('no title');
         a.innerHTML = `Rate: `;
       }
       if (header == '') {
         a = document.getElementById('h4');
-        console.log('no header');
+        // console.log('no header');
         a.innerHTML = `Header: <span class="text-red-600">*</span>`;
       } else {
         a = document.getElementById('h4');
@@ -87,7 +86,7 @@ function upload_create_page_form() {
 
       if (details == '') {
         a = document.getElementById('h5');
-        console.log('no details');
+        // console.log('no details');
         a.innerHTML = `Details: <span class="text-red-600">*</span>`;
       } else {
         a = document.getElementById('h5');
@@ -96,6 +95,7 @@ function upload_create_page_form() {
     }
   } else {
     console.log('No user is signed in');
+    alert('No user is signed in');
     window.location.href = '../Pages/home.html';
   }
 }

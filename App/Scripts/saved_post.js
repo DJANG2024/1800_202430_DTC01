@@ -26,7 +26,7 @@ async function userSavePost() {
         removeRef
           .delete()
           .then(() => {
-            console.log('unsaved post');
+            // console.log('unsaved post');
             document.getElementById('saved').innerText = 'bookmark_add';
             //delete the Doc
           })
@@ -46,7 +46,8 @@ async function userSavePost() {
           });
       }
     } else {
-      console.log('user is not logged in');
+      //   console.log('user is not logged in');
+      alert('No user is signed in');
     }
   });
 }
