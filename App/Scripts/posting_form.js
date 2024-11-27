@@ -45,7 +45,7 @@ function upload_create_page_form() {
           profile: userID,
         })
         .then(() => {
-          console.log('SUccessfully created post');
+          //   console.log('SUccessfully created post');
 
           window.location.href = '../Pages/posting_thanks.html'; // Redirect to the thanks page
         });

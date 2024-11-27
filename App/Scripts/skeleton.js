@@ -262,6 +262,5 @@ function loadSkeleton() {
   $('#navbarPlaceholder').load('../Assets/navbar.html');
   $('#create_posting').load('../Assets/posting_form.html');
   $('#full_post').load('../Assets/fullscreen_single_posting.html');
-  console.log('working');
 }
 loadSkeleton(); //invoke the function
