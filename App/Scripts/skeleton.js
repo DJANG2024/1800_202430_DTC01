@@ -95,8 +95,8 @@ var concated_posting = '';
 //loadPosts() // use for the feed (all postings)
 //loadPosts(the posts ID) // use for singular postings
 
-function loadPosts(postID) {
-  if (postID) {
+function loadPosts(postID, placementID) {
+  if (postID && placementID) {
     db.collection('posting')
       .doc(postID)
       .get()
@@ -111,46 +111,46 @@ function loadPosts(postID) {
         //
         //
         concated_posting = `
-        <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto " >
+        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px]">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
-            <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
-
-            <div class="flex flex-row justify-between">
-              <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-              <h1 class="text-2xl font-semibold ">
-                $${rate}
-              </h1>
-              
-              
-            </div>
-            <div class="flex flex-row space-x-4">
-              <a href="profile.html" class="px-2">
-                <h1 class="text-3xl font-semibold font-roboto">${user}</h1>
-              </a>
-            </div>
-            <button>
-
-                <div class="flex flex-row justify-between space-x-3">
-                  <i class="material-icons text-[150px]">image</i>
+            <div class="p-8">
+              <div class="font-bold font-oswald flex flex-row justify-between">
+                <div class="text-3xl">${title}</div>
+                <div id="userRate" class="text-2xl bg-green-500 rounded-2xl px-3 h-10">
+                  $${rate}
+                </div>
+              </div>
+              <div class="flex flex-row space-x-4">
+                <a href="profile.html" class="px-2">
+                  <h1 class="text-xl font-semibold font-roboto">${user}</h1>
+                </a>
+              </div>
+                <div class="">
+                  <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
                   <p class="text-xl pt-7 font-roboto">
                     ${details}
                   </p>
                 </div>
-
-            </button>
-          </div>
-        </a>
+              </div>
+            </div>
+          </a>
         </div>`;
-        $('#savedFeedPosting').append(
+        $(`#${placementID}`).append(
           `<div id="post${current_post}">${concated_posting}</div>`
         );
+        // $('#savedFeedPosting').append(
+        //   `<div id="post${current_post}">${concated_posting}</div>`
+        // );
         current_post += 1;
       });
   } else {
+
     db.collection('posting')
       .get()
       .then(async (snapshot) => {
         for (const doc of snapshot.docs) {
+ 
+          
           // This is a similar way for .forEach but it allows async functions to be called during it
           //we need to because we need to query the username
           let details = doc.data().details;

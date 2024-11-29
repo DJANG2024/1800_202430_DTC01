@@ -53,20 +53,21 @@ async function savedPage() {
 
             // Fetch all documents in the collection
             const querySnapshot = await collectionRef.get();
-
+            console.log(querySnapshot);
             // Check if the collection is empty
             if (querySnapshot.empty) {
                 console.log("No documents found.");
                 return;
             }
 
-    
+            var account = 0
             for (const doc of querySnapshot.docs) {
                 try {
                     console.log(`Processing document ID: ${doc.id}`);
-
+                    account++
+                    console.log(account);
                     const postID = doc.id;
-                    await loadPosts(postID);
+                    await loadPosts(postID, `savedFeedPosting`);
                     
                 } catch (error) {
                     console.error("Error processing document:", error);
