@@ -150,9 +150,9 @@ async function userDeletePost(postID) {
       let deleteRef = db.collection('posting').doc(postID)
 
       deleteRef.delete()
-        .then(() => {
+        .then(async() => {
           console.log("deleted post");
-          //location.reload();
+          location.reload();
         })
         .catch((error) => {
           console.error("Error deleting document: ", error);
