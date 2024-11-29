@@ -1,49 +1,41 @@
 <body>
   <div
-    class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] w-[55%] mx-auto p-8 -ml-4 -mt-[100px]"
+    class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] w-full mx-auto p-8"
   >
     <header class="space-y-5">
-      <div class="flex flex-row justify-between">
+      <div class="flex flex-row justify-between mb-5">
         <h1 id="title" class="text-3xl font-bold font-oswald">Posting</h1>
         <button onclick="userSavePost()">
-          <i class="material-icons text-4xl p-2" id="saved">bookmark_add</i>
+          <i class="material-icons text-4xl" id="saved">bookmark_add</i>
         </button>
       </div>
+      <!-- ----------------------------------- -->
+      <!-- Need to changed to thier profile!!! -->
+      <!-- ----------------------------------- -->
       <a href="profile.html">
         <div
-          class="flex flex-row space-x-6 align-middle border-solid border-4 border-[#12263A] rounded-3xl w-4/5 px-2"
+          class="space-x-6 align-middle border-solid border-4 border-[#12263A] rounded-3xl w-full px-2"
         >
-          <h1 id="username" class="text-2xl font-semibold">User A</h1>
-          <i class="material-icons text-4xl">account_circle</i>
+          <div class="flex flex-row justify-between">
+            <h1 id="username" class="text-2xl font-semibold">User A</h1>
+            <i class="material-icons text-4xl">account_circle</i>
+          </div>
         </div>
       </a>
     </header>
 
-    <main>
+    <main class="mt-5">
       <div class="space-y-7 text-2xl">
-        <h id="header" class="font-semibold"> Header goes here </h>
+        <h id="header" class="font-semibold"> Content header </h>
         <p id="details">
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Mi nullam
-          faucibus felis eget nunc. Id consequat convallis nullam nostra magnis;
-          mattis maecenas sem. Pellentesque et id aptent maecenas vitae donec
-          convallis taciti. Nascetur litora molestie phasellus commodo congue
-          fringilla molestie.
+          <!-- Contents from the user -->
         </p>
+        <!-- filler images -->
         <div class="flex flex-row justify-center">
           <i class="material-icons text-[100px] text-center">image</i>
           <i class="material-icons text-[100px] text-center">image</i>
           <i class="material-icons text-[100px] text-center">image</i>
         </div>
-
-        <p>
-          Orci ornare tellus lacus tellus quisque. Natoque congue est lobortis
-          maximus quis urna a netus. Torquent dui tortor a quam curae dolor
-          ultrices dignissim.
-        </p>
-        <ul>
-          <li>Vehicula proin nunc</li>
-          <li>Enim ultricies torquent tellus</li>
-        </ul>
       </div>
     </main>
   </div>

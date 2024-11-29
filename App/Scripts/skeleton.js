@@ -255,16 +255,12 @@ window.addEventListener('load', () => {
 });
 
 function loadSkeleton() {
-  console.log($('#headerPlaceholder').load('../Assets/header.html'));
-  console.log(
-    $('#header_smallerPlaceholder').load('../Assets/header_smaller.html')
-  );
-  console.log(
-    $('#header_profilePlaceholder').load('../Assets/header_profile.html')
-  );
+  $('#headerPlaceholder').load('../Assets/header.html');
+  $('#header_smallerPlaceholder').load('../Assets/header_smaller.html');
+  $('#header_profilePlaceholder').load('../Assets/header_profile.html');
   loadPosts(); //source of duplicates? NOPE
-  console.log($('#navbarPlaceholder').load('../Assets/navbar.html'));
-  console.log($('#create_posting').load('../Assets/posting_form.html'));
-  console.log($('#full_post').load('../Assets/fullscreen_single_posting.html'));
+  $('#navbarPlaceholder').load('../Assets/navbar.html');
+  $('#create_posting').load('../Assets/posting_form.html');
+  $('#full_post').load('../Assets/fullscreen_single_posting.html');
 }
 loadSkeleton(); //invoke the function
