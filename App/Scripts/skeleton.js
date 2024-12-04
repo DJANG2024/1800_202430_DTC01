@@ -111,7 +111,7 @@ function loadPosts(postID, placementID) {
         //
         //
         concated_posting = `
-        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px]">
+        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px] transition hover:scale-[1.01] ease-in-out hover:bg-[#f5d5b6]">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
             <div class="p-8">
               <div class="font-bold font-oswald flex flex-row justify-between">
@@ -165,7 +165,7 @@ function loadPosts(postID, placementID) {
 
           //adds info to the post
           concated_posting = `
-        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px]">
+        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px] transition hover:scale-[1.01] ease-in-out hover:bg-[#f5d5b6]">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
             <div class="p-8">
               <div class="font-bold font-oswald flex flex-row justify-between">
