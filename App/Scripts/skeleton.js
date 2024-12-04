@@ -108,8 +108,7 @@ function loadPosts(postID, placementID) {
         var postID = postDoc.id;
         console.log(details);
         const user = await getUserName(profile);
-        //
-        //
+   
         concated_posting = `
         <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px] transition hover:scale-[1.01] ease-in-out hover:bg-[#f5d5b6]">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
@@ -244,6 +243,7 @@ function backButton() {
     window.location.href = 'home.html';
   }
 }
+
 
 //for back button, pls do not touch :3
 window.addEventListener('load', () => {
