@@ -114,7 +114,7 @@ function loadPosts(postID, placementID) {
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
             <div class="p-8">
               <div class="font-bold font-oswald flex flex-row justify-between">
-                <div class="text-3xl">${title}</div>
+                <div class="text-3xl ">${title}</div>
                 <div id="userRate" class="text-2xl bg-green-500 rounded-2xl px-3 h-10">
                   $${rate}
                 </div>
@@ -125,8 +125,7 @@ function loadPosts(postID, placementID) {
                 </a>
               </div>
                 <div class="">
-                  <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
-                  <p class="text-xl pt-7 font-roboto">
+                  <p class="text-xl pt-7 font-roboto ">
                     ${details}
                   </p>
                 </div>
@@ -179,7 +178,7 @@ function loadPosts(postID, placementID) {
                 </a>
               </div>
                 <div class="">
-                  <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
+                  
                   <p class="text-xl pt-7 font-roboto">
                     ${details}
                   </p>
