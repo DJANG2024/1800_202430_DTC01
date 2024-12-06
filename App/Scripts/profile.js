@@ -58,14 +58,14 @@ function loadMyPosts() {
         //post_list.push(postID)
         if (ID == profile) {
           concated_posting = `
-        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px]">
+        <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px] transition hover:scale-[1.01] ease-in-out hover:bg-[#f5d5b6] shadow-lg">
           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
-            <div class="p-8">
-              <div class="font-bold font-oswald flex flex-row justify-between">
+            <div class="p-6">
+              <div class="font-bold font-oswald flex flex-row justify-between bg-[#f8dbbf] px-4 py-3 rounded-xl shadow-sm transition ease-in-out hover:shadow-lg">
                 <div class="text-3xl">${title}</div>
                 
-                <a onclick="userDeletePost(${postID})" id="userDelete${postID}" class="text-2xl bg-brown-300 rounded-3xl px-3 h-10">
-                  <i class="material-icons text-4xl text-[#12263A]">delete</i>
+                <a onclick="userDeletePost(${postID})" id="userDelete${postID}" class="text-2xl bg-brown-300  h-10 transition hover:scale-[1.05] ease-in-out hover:shadow-sm">
+                  <i class="material-icons bg-[#f2b47b] text-4xl rounded-lg text-[#0e1f30] hover:text-[#1c3751] hover:shadow-sm">delete</i>
                 </a>
               </div>
               <div class="flex flex-row space-x-4">
@@ -74,8 +74,7 @@ function loadMyPosts() {
                 </a>
               </div>
                 <div class="">
-                  <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
-                  <p class="text-xl pt-7 font-roboto">
+                  <p class="text-lg pt-7 font-roboto">
                     ${details}
                   </p>
                 </div>
@@ -90,43 +89,7 @@ function loadMyPosts() {
             'click', () => {
               userDeletePost(postID)
             })
-          // const element = document.getElementById("current_post");
-          // element.remove(); // Removes the div with the 'div-02' id
-          //await loadPosts(postID, `feedProfile`);
-          // concated_posting = `
-          //   <div class="max-w-[690px] max-h-[1280px] p-3 mx-auto" >
-          //     <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
-          //     <div class="border-solid border-4 border-black rounded-3xl p-7 space-y-3">
-
-          //       <div class="flex flex-row justify-between">
-          //         <h1 class="text-5xl font-bold font-oswald">${title}</h1>
-          //         <a href="">
-          //           <i class="material-icons text-6xl">bookmark_add</i>
-          //         </a>
-          //       </div>
-          //       <div class="flex flex-row space-x-4">
-          //         <a href="profile.html" class="px-2">
-          //           <h1 class="text-3xl font-semibold font-roboto">${user}</h1>
-          //         </a>
-          //       </div>
-          //       <button>
-
-          //           <div class="flex flex-row justify-between space-x-3">
-          //             <i class="material-icons text-[150px]">image</i>
-          //             <p class="text-xl pt-7 font-roboto">
-          //               ${details}
-          //             </p>
-          //           </div>
-
-          //         </button>
-          //       </div>
-          //     </a>
-          //   </div>`;
-          // $('#feedProfile').append(
-          //   `<div id="post${current_post}">${concated_posting}</div>`
-          // );
-          // console.log("appended post"); //UNCOMMENT
-
+          
 
         } else {
           //current_post += 1;
@@ -137,7 +100,32 @@ function loadMyPosts() {
     });
 }
 loadMyPosts();
-
+// concated_posting = `
+//         <div class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] mb-4 w-[90%] mx-auto min-h-[300px]">
+//           <a class="card-href" href="../Pages/view_posting.html?docID=${postID}";>
+//             <div class="p-8">
+//               <div class="font-bold font-oswald flex flex-row justify-between">
+//                 <div class="text-3xl">${title}</div>
+                
+//                 <a onclick="userDeletePost(${postID})" id="userDelete${postID}" class="text-2xl bg-brown-300 rounded-3xl px-3 h-10">
+//                   <i class="material-icons text-4xl text-[#12263A]">delete</i>
+//                 </a>
+//               </div>
+//               <div class="flex flex-row space-x-4">
+//                 <a href="profile.html" class="px-2">
+//                   <h1 class="text-xl font-semibold font-roboto">${user}</h1>
+//                 </a>
+//               </div>
+//                 <div class="">
+//                   <i class="material-icons text-[150px] h-32 float-left -ml-4">image</i>
+//                   <p class="text-xl pt-7 font-roboto">
+//                     ${details}
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </a>
+//         </div>`
 
 async function userDeletePost(postID) {
   console.log("clicked");
