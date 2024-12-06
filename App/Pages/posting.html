@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300&display=swap" rel="stylesheet" />
+    
 
     <style>
       .visible {
@@ -43,6 +38,7 @@
       .hidden {
         visibility: hidden;
       }
+
       .visible {
         visibility: visible;
       }
@@ -56,9 +52,9 @@
         theme: {
           extend: {
             fontFamily: {
-              oswald: ["Oswald", "sans-serif"], //oswald (title)
-              poppins: ["Poppins", "sans-serif"], //poppins
-              fira: ["Fira Sans", "sans-serif"], // fira
+              oswald: ['Oswald', 'sans-serif'], //oswald (title)
+              poppins: ['Poppins', 'sans-serif'], //poppins
+              fira: ['Fira Sans', 'sans-serif'], // fira
             },
           },
         },
@@ -66,19 +62,18 @@
     </script>
   </head>
 
-  <body class="space-y-4">
-    <header id="header_smallerPlaceholder" class="font-oswald"></header>
+<body class="space-y-4">
+  <header id="header_smallerPlaceholder"></header>
 
-    <!-- Previously pb=[430px] was it for popup keyboard? -->
-    <main id="create_posting" class="pt-[25%] pb-[20%] p-4"></main>
+  <!-- Previously pb=[430px] was it for popup keyboard? -->
+  <main id="create_posting" class="pt-[25%] pb-[20%] p-4"></main>
+  <nav id="navbarPlaceholder"></nav>
 
-    <nav id="navbarPlaceholder"></nav>
 
+  <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
+  <script src="../Scripts/profile.js"></script>
+  <script src="../Scripts/skeleton.js"></script>
+  <script src="../Scripts/posting_form.js"></script>
+</body>
 
-    <script src="../Login/Scripts/firebaseAPI_DTC01.js"></script>
-    <script src="../Scripts/skeleton.js"></script>
-    <script src="../Scripts/posting_form.js"></script>
-  </body>
-  </body>
 </html>
-

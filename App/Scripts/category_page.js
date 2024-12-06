@@ -3,7 +3,7 @@ async function categoryPage() {
         // Check if user is signed in:
         if (user) {
 
-            id_list = ['0DvNN04FVxP9kmvCHafV']
+            id_list = ['D670huSEPKyxFrC3LihX', 'C5KX7COLAAW1fqKbt67H', 'AVR5BedvvqPX5vNJFekk',]
             
             for (const doc of id_list) {
                 try {

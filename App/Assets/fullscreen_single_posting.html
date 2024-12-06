@@ -1,9 +1,9 @@
 <body>
   <div
-    class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] w-full mx-auto p-8"
+    class="border-solid border-4 border-[#12263A] rounded-3xl bg-[#F4D1AE] w-full mx-auto p-6"
   >
     <header class="space-y-5">
-      <div class="flex flex-row justify-between mb-5">
+      <div class="flex flex-row justify-between mb-5 bg-[#f8dbbf] px-4 py-4 rounded-xl shadow-md">
         <h1 id="title" class="text-5xl font-bold font-oswald">Posting</h1>
         <button onclick="userSavePost()">
           <i class="material-icons text-4xl" id="saved">bookmark_add</i>
@@ -14,28 +14,27 @@
       <!-- ----------------------------------- -->
       <a href="profile.html">
         <div
-          class="space-x-6 align-middle border-solid border-4 border-[#12263A] rounded-3xl w-full px-2"
+          class="space-x-6 align-middle border-solid rounded-3xl w-full px-2"
         >
           <div class="flex flex-row justify-between">
-            <h1 id="username" class="text-2xl font-semibold">User A</h1>
-            <i class="material-icons text-4xl">account_circle</i>
+            <h1 class="text-xl font-semibold">User: <span id="username" class="text-slate-800"></span></h1>
           </div>
         </div>
       </a>
     </header>
 
-    <main class="mt-5">
-      <div class="space-y-7 text-xl">
-        <h class="font-semibold italic"> Contact: <span id="header" ></span></h>
-        <p id="details">
+    <main class="mt-2">
+      <div class="space-y-7 text-xl pt-2">
+        
+        <p id="details" class="py-5 px-2">
           <!-- Contents from the user -->
         </p>
-        <!-- filler images -->
-        <div class="flex flex-row justify-center">
-          <!-- <i class="material-icons text-[100px] text-center">image</i>
-          <i class="material-icons text-[100px] text-center">image</i>
-          <i class="material-icons text-[100px] text-center">image</i>
-        </div> -->
+
+        
+        <div class="bg-[#f8dbbf] px-4 py-2  rounded-xl shadow-md">
+          <h class="font-semibold italic text-lg"> Contact: <span id="header"></span></h>
+        </div>
+        
       </div>
     </main>
   </div>

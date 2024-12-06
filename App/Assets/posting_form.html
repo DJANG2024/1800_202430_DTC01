@@ -1,18 +1,18 @@
 <!-- the different <h> numbers are used to show asterixes when missed in the form, be careful -->
 <body class="bg-slate-400 max-w-[700px] mx-5 my-5 p-5">
-  <div class="space-y-4 bg-slate-500 p-4 rounded-2xl">
-    <h1 class="text-4xl text-center">Create Posting</h1>
+  <div class="space-y-4 bg-slate-400 p-4 rounded-2xl">
+    <h1 class="text-4xl text-center bg-slate-300 px-2 py-3 rounded-xl shadow-md font-oswald">Create Posting</h1>
 
     <main class="p-2 space-y-6">
       <div>
         <form>
           <div
-            class="flex flex-row text-xl justify-center space-x-2 bg-slate-500 rounded-xl mr-4"
+            class="flex flex-row text-xl justify-center space-x-2  rounded-xl mr-4"
           >
             <h2 class="text-xl py-3 pl-4" id="h2">Title:</h2>
             <input
               id="title"
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl pr-6 placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2 mr-2"
+              class="shadow-md rounded-xl border-gray-200 border-2 bg-gray-200 text-xl pr-6 placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2 mr-2 font-roboto"
               type="text"
               placeholder="Enter title"
             />
@@ -72,12 +72,12 @@
 
           <!-- header input in the form, cant comment out because its used by firebase -->
           <div
-            class="flex flex-row text-xl justify-center space-x-2 bg-slate-500 rounded-xl mt-10"
+            class="flex flex-row text-xl justify-center space-x-2  rounded-xl mt-10"
           >
             <h4 class="text-xl py-3" id="h4">Contact:</h4>
             <input
               id="header"
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2"
+              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2 shadow-md"
               type="text"
               placeholder="email or phone number"
             />
@@ -86,7 +86,7 @@
           <h5 class="text-xl mt-8 mb-2" id="h5">Details:</h5>
           <textarea
             id="details"
-            class="rounded-xl border-gray-200 border-2 bg-gray-200 w-full h-60 pb-40 pl-3 py-2 text-xl placeholder:text-xl"
+            class="rounded-xl border-gray-200 border-2 bg-gray-200 w-full h-60 pb-40 pl-3 py-2 text-xl placeholder:text-xl shadow-md"
             type="text"
             placeholder="Enter Details"
           ></textarea>
@@ -95,7 +95,7 @@
             <h4 class="text-xl mt-8 mb-2 pb-3" id="h6">Category:</h4>
             <select
               id="category"
-              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded-xl shadow leading-tight focus:outline-none focus:shadow-outline text-xl"
+              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded-xl shadow leading-tight focus:outline-none focus:shadow-outline text-xl "
             >
               <option>Digital Services</option>
               <option>Cleaning Services</option>
@@ -110,28 +110,28 @@
 
           <div
             id=""
-            class="flex flex-row text-xl justify-center space-x-2 bg-slate-500 rounded-xl mr-4 mt-10"
+            class="flex flex-row text-xl justify-center space-x-2 rounded-xl mr-4 mt-10"
           >
             <h4 id="h7" class="text-xl py-3 pl-4">Rate:</h4>
             <input
               id="rate"
-              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl pr-6 placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2 mr-2"
+              class="rounded-xl border-gray-200 border-2 bg-gray-200 text-xl pr-6 placeholder:text-xl placeholder:py-1 pl-2 mt-2 mb-2 mr-2 shadow-md"
               type="text"
               placeholder="Enter rate per hour"
             />
           </div>
         </form>
       </div>
-      <div class="flex flex-row space-x-5">
+      <div class="flex flex-row space-x-5 justify-between">
         <button
           onclick="upload_create_page_form()"
-          class="border text-gray-400 dark:text-gray-400 mt-5 font rounded-3xl px-10 py-4 text-xl dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500"
+          class="transition hover:scale-[1.01] ease-in-out border text-gray-300 mt-5  rounded-3xl px-7 py-4 text-xl dark:hover:bg-gray-600 dark:bg-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 "
         >
           Submit
         </button>
         <button
           id="missing_form"
-          class="border text-red-500 mt-5 font rounded-3xl px-6 py-4 text-base bg-gray-800 border-red-500 visibility: hidden"
+          class="border text-red-500 mt-5  rounded-3xl px-6 py-4 text-sm bg-gray-700 border-red-500 visibility: hidden "
         >
           *Please fill in missing areas
         </button>
