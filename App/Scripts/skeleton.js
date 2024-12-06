@@ -115,7 +115,7 @@ function loadPosts(postID, placementID) {
             <div class="p-6">
               <div class="font-bold font-oswald flex flex-row justify-between  bg-[#f8dbbf] px-4 py-3 rounded-xl shadow-sm transition ease-in-out hover:shadow-lg">
                 <div class="text-3xl ">${title}</div>
-                <div id="userRate" class="text-xl bg-green-500 rounded-xl px-2.5 h-10 pt-1">
+                <div id="userRate" class="text-xl bg-[#32bd6a] rounded-xl px-2.5 h-10 pt-1">
                   $${rate}
                 </div>
               </div>
@@ -168,7 +168,7 @@ function loadPosts(postID, placementID) {
             <div class="p-6">
               <div class="font-bold font-oswald flex flex-row justify-between bg-[#f8dbbf] px-4 py-3 rounded-xl shadow-sm transition ease-in-out hover:shadow-lg">
                 <div class="text-3xl">${title}</div>
-                <div id="userRate" class="text-xl bg-green-500 rounded-xl px-2.5 h-10 pt-1">
+                <div id="userRate" class="text-xl bg-[#32bd6a] rounded-xl px-2.5 h-10 pt-1">
                   $${rate}
                 </div>
               </div>
