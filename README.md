@@ -35,7 +35,7 @@ Here are some known bugs:
 
 - Categories functionality is not complete
 - clicking on the profile of a post will always send the user to their own profile
-- ...
+- A lot of the login functionality had to be moved to the outter folder to make it deployable. This messes up the organization of the folders, it happened the night before we were presenting
 
 ## 6. Features for Future
 
