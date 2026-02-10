@@ -1,4 +1,4 @@
-# Project Title
+# FacePalm
 
 ## 1. Project Description
 
@@ -6,15 +6,13 @@ Empower people to participate in their local communities through acts of volunte
 
 ## 2. Names of Contributors
 
-List team members and/or short bio's here...
-
 - Ethan
 - Derek
 - Titus
 
 ## 3. Technologies and Resources Used
 
-List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
+*Technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.*
 
 - HTML, CSS, JavaScript
 - Firebase 8.0 (BAAS - Backend as a Service)
@@ -22,12 +20,10 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 
 ## 4. Complete setup/installion/usage
 
-State what a user needs to do when they come to your project. How do others start using your code or application?
+*What a user needs to do when they come to your project, and how to start using the code or application*
 Here are the steps ...
 
 - simply begin from app/login/index
-- ...
-- ...
 
 ## 5. Known Bugs and Limitations
 
